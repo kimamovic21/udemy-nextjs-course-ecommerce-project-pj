@@ -10,3 +10,13 @@ Section 01: Welcome !
 03. Why this course ? The "missing guide" explained
 
 04. Tech stack & prerequisites
+
+
+Section 02: Environment setup
+
+05. Section intro & objectives
+
+06. Project creation
+-open link: https://nextjs.org
+-type command: npx create-next-app@latest .
+-type command: npm run dev
