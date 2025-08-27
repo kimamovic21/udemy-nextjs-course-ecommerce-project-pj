@@ -69,3 +69,8 @@ Section 02: Environment setup
 -open and update app/page.tsx component
 -open route: http://localhost:3000
 -open route: http://localhost:3000/products
+
+13. Home page and server components in Next.js
+-open link: https://nextjs.org/docs/app/getting-started/server-and-client-components
+-in component app/page.tsx create HTML elements with Tailwind CSS classes
+-open route: http://localhost:3000
