@@ -1,6 +1,8 @@
 # Master Next.js 15 - Build and Deploy an E-Commerce Project
 
-## This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app)
+
+### Original GitHub Repo: [https://github.com/piotr-jura-udemy/next-ecommerce]
 
 ### Getting Started
 

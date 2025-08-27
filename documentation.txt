@@ -62,3 +62,10 @@ Section 02: Environment setup
 -type command: npx prisma db push
 
 11. Summary & Troubleshooting
+
+12. File-based routing in app router
+-open link: https://nextjs.org/docs/app
+-type command: npm run dev
+-open and update app/page.tsx component
+-open route: http://localhost:3000
+-open route: http://localhost:3000/products
