@@ -60,3 +60,5 @@ Section 02: Environment setup
 -type command: \conninfo
 -type command: \q
 -type command: npx prisma db push
+
+11. Summary & Troubleshooting
