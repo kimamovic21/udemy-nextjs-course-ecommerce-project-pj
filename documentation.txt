@@ -38,3 +38,25 @@ Section 02: Environment setup
 -type command: psql -U postgres
 -type command: \l
 -type command: ctrl + d
+
+10. Setting up prisma
+-open link: https://www.prisma.io
+-open link: https://www.npmjs.com/package/prisma
+-open link: https://www.npmjs.com/package/@prisma/client
+-type command: npm i prisma @prisma/client
+-type command: npx prisma
+-type command: npx prisma init
+-in .env file update env variable DATABASE_URL
+-type command: docker ps
+-type command: npx prisma
+-type command: npx prisma db push
+-type command: docker stop b1b67d7dcd37
+-type command: docker ps
+-type command: npx prisma db push
+-update password and port in docker-compose.yml file
+-type command: docker compose down -v 
+-type command: docker compose up -d
+-type command: docker exec -it udemy-nextjs-course-ecommerce-project-pj-postgres-1 psql -U postgres -d next15_ecommerce
+-type command: \conninfo
+-type command: \q
+-type command: npx prisma db push
