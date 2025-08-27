@@ -1,0 +1,12 @@
+Master Next.js 15 - Build and Deploy an E-Commerce Project
+
+
+Section 01: Welcome !
+
+01. Welcome in the course!
+
+02. The project demo
+
+03. Why this course ? The "missing guide" explained
+
+04. Tech stack & prerequisites
