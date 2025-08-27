@@ -24,3 +24,17 @@ Section 02: Environment setup
 07. Quick into to Docker & Docker compose
 
 08. VSCode & GitHub Copilot (OPTIONAL)
+
+09. Running Postgres using Docker
+-install VSCode extension Container Tools
+-open link: https://www.fadocodecamp.com/posts/yaml
+-create docker-compose.yml file
+-in docker-compose.yml file add docker options
+-open link: https://www.docker.com
+-download and install Docker application
+-type command: docker compose up -d 
+-type command: docker ps
+-type command: docker exec -it b1b67d7dcd37 bash
+-type command: psql -U postgres
+-type command: \l
+-type command: ctrl + d
