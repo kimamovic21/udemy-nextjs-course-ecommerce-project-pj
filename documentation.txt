@@ -20,3 +20,5 @@ Section 02: Environment setup
 -open link: https://nextjs.org
 -type command: npx create-next-app@latest .
 -type command: npm run dev
+
+07. Quick into to Docker & Docker compose
