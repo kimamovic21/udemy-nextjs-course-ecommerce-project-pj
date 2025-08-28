@@ -116,3 +116,5 @@ Section 03: Product Listing Feature
 -in folder lib create utils.ts file
 -in utils.ts file create and export function formatPrice()
 -open route: http://localhost:3000
+
+20. Summary
