@@ -124,3 +124,12 @@ Section 03: Product Listing Feature
 Section 04: Database & product data
 
 21. Section intro & objectives
+
+22. Product model and migration
+-type command: docker compose up -d
+-in schema.prisma file create model Product
+-type command: npx prisma migrate dev --name add_product
+-in folder prisma check folder migrations
+-open link: https://www.prisma.io/studio
+-type command: npx prisma studio
+-open route: http://localhost:5555
