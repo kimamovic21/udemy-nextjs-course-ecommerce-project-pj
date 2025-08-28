@@ -123,6 +123,7 @@ Section 03: Product Listing Feature
 
 Section 04: Database & product data
 
+
 21. Section intro & objectives
 
 22. Product model and migration
@@ -183,3 +184,10 @@ Section 04: Database & product data
 -open route: http://localhost:3000
 
 29. Summary
+
+
+
+Section 05: Adding shadcn/ui, suspense, pagination
+
+
+30. What is shadcn/ui ?
