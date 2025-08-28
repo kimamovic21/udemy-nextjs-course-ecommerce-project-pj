@@ -106,3 +106,8 @@ Section 03: Product Listing Feature
 17. Responsive images
 -in component product-card.tsx, in jsx add to component Image prop sizes
 -open route: http://localhost:3000
+
+18. More products, responsive grid, lazy loading
+-in mocks.ts file add more products
+-in component product-card.tsx add to component Image prop loading
+-open route: http://localhost:3000

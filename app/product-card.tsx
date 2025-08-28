@@ -10,6 +10,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           alt={product.name}
           className='object-cover'
           fill
+          loading='lazy'
           sizes='(max-width: 768px) 100vw,
                  (max-width: 1200px) 50vw, 
                  33vw'
