@@ -166,3 +166,7 @@ Section 04: Database & product data
 -type command: npm run seed
 -type command: npx prisma studio
 -open route: http://localhost:5555 and check Category and Product tables
+
+27. Next.js Prisma client quirk
+-in folder lib create prisma.ts file
+-in prisma.ts file add code from Prisma documentation
