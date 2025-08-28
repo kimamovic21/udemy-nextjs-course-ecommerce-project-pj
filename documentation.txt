@@ -1,7 +1,9 @@
 Master Next.js 15 - Build and Deploy an E-Commerce Project
 
 
+
 Section 01: Welcome !
+
 
 01. Welcome in the course!
 
@@ -12,7 +14,9 @@ Section 01: Welcome !
 04. Tech stack & prerequisites
 
 
+
 Section 02: Environment setup
+
 
 05. Section intro & objectives
 
@@ -63,6 +67,11 @@ Section 02: Environment setup
 
 11. Summary & Troubleshooting
 
+
+
+Section 03: Product Listing Feature
+
+
 12. File-based routing in app router
 -open link: https://nextjs.org/docs/app
 -type command: npm run dev
@@ -92,4 +101,8 @@ Section 02: Environment setup
 -open link: https://nextjs.org/docs/pages/api-reference/components/image
 -in component product-card.tsx import component Image from package next/link
 -in next.config.ts file add object images
+-open route: http://localhost:3000
+
+17. Responsive images
+-in component product-card.tsx, in jsx add to component Image prop sizes
 -open route: http://localhost:3000
