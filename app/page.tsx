@@ -1,4 +1,5 @@
 import { mockProducts } from '@/lib/mocks';
+import ProductCard from './product-card';
 
 const HomePage = () => {
   return (
@@ -10,9 +11,12 @@ const HomePage = () => {
         Showing {mockProducts.length} products
       </p>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-        <p>
-          Products will go here
-        </p>
+        {mockProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
       </div>
     </main>
   );

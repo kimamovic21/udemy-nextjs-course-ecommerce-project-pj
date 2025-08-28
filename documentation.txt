@@ -80,3 +80,10 @@ Section 02: Environment setup
 -in mocks.ts file create type Product and variable const mockProducts
 -in component app/page.tsx import variable mockProducts from mocks.ts file
 -open route: http://localhost:3000
+
+15. Display products in a grid
+-create component product-card.tsx and function ProductCard
+-in component app/page.tsx import component ProductCard from component product-card.tsx
+-in jsx create div element with Tailwind CSS grid classes
+-in div element invoke function mockProducts.map()
+-open route: http://localhost:3000
