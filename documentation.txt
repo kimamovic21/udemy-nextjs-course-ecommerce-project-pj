@@ -156,3 +156,13 @@ Section 04: Database & product data
 -type command: npm run seed
 -type command: npx prisma studio
 -open route: http://localhost:5555 and check Category table
+
+26. Seeding: Adding products
+-in schema.prisma file update model Product
+-type command: npx prisma migrate dev --name=update_product
+-import type Product
+-in seed.ts file create variable const products with type Product[]
+-invoke loop for (const product of products)
+-type command: npm run seed
+-type command: npx prisma studio
+-open route: http://localhost:5555 and check Category and Product tables

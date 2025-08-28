@@ -17,10 +17,10 @@ datasource db {
 model Product {
   id          String   @id @default(cuid())
   name        String
-  price       Decimal  @db.Decimal(10, 2)
-  description String
-  images      String[]
-  visible     Boolean  @default(true)
+  description String?
+  price       Float
+  image       String?
+  slug        String   @unique
   category    Category @relation(fields: [categoryId], references: [id])
   categoryId  String
 }
