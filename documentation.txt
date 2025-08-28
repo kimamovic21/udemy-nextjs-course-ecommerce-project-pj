@@ -87,3 +87,9 @@ Section 02: Environment setup
 -in jsx create div element with Tailwind CSS grid classes
 -in div element invoke function mockProducts.map()
 -open route: http://localhost:3000
+
+16. Powerful image component
+-open link: https://nextjs.org/docs/pages/api-reference/components/image
+-in component product-card.tsx import component Image from package next/link
+-in next.config.ts file add object images
+-open route: http://localhost:3000
