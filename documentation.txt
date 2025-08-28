@@ -170,3 +170,14 @@ Section 04: Database & product data
 27. Next.js Prisma client quirk
 -in folder lib create prisma.ts file
 -in prisma.ts file add code from Prisma documentation
+
+28. Fetching products in server component
+-open link: https://nextjs.org/docs/app/getting-started/fetching-data
+-in component layout.tsx update property title
+-in component app/page.tsx make function HomePage() async
+-import object prisma from prisma.ts file
+-create variable const products
+-in jsx invoke function products.map()
+-in component product-card.tsx import type Product from folder prisma
+-in jsx add conditional rendering product.image &&
+-open route: http://localhost:3000
