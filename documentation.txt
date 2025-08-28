@@ -74,3 +74,9 @@ Section 02: Environment setup
 -open link: https://nextjs.org/docs/app/getting-started/server-and-client-components
 -in component app/page.tsx create HTML elements with Tailwind CSS classes
 -open route: http://localhost:3000
+
+14. Type safety and mock data
+-create folder lib and mocks.ts file
+-in mocks.ts file create type Product and variable const mockProducts
+-in component app/page.tsx import variable mockProducts from mocks.ts file
+-open route: http://localhost:3000
