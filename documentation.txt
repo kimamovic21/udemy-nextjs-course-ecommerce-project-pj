@@ -141,3 +141,10 @@ Section 04: Database & product data
 -type command: npx prisma studio
 -in folder prisma check folder migrations
 -open route: http://localhost:5555
+
+24. Creating and running a seeding script
+-open link: https://www.npmjs.com/package/tsx
+-type command: npm i -D tsx
+-in folder prisma create seed.ts file
+-in package.json file add command seed
+-type command: npm run seed
