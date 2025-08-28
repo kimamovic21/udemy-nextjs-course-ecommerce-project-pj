@@ -148,3 +148,11 @@ Section 04: Database & product data
 -in folder prisma create seed.ts file
 -in package.json file add command seed
 -type command: npm run seed
+
+25. Seeding: Prisma client, deleting data & inserting categories
+-open link: https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/instantiate-prisma-client
+-open link: https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases/install-prisma-client-typescript-postgresql
+-in seed.ts file add database seed script
+-type command: npm run seed
+-type command: npx prisma studio
+-open route: http://localhost:5555 and check Category table
