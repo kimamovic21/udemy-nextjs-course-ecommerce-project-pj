@@ -181,3 +181,5 @@ Section 04: Database & product data
 -in component product-card.tsx import type Product from folder prisma
 -in jsx add conditional rendering product.image &&
 -open route: http://localhost:3000
+
+29. Summary
