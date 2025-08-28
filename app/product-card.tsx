@@ -1,3 +1,4 @@
+import { formatPrice } from '@/lib/utils';
 import { Product } from '@/lib/mocks';
 import Image from 'next/image';
 
@@ -21,8 +22,8 @@ const ProductCard = ({ product }: { product: Product }) => {
         {product.name}
       </h2>
 
-      <p className='text-gray-600'>
-        ${product.price.toFixed(2)}
+      <p className="text-gray-600">
+        {formatPrice(product.price)}
       </p>
 
       <p className='text-gray-500'>
