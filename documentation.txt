@@ -133,3 +133,11 @@ Section 04: Database & product data
 -open link: https://www.prisma.io/studio
 -type command: npx prisma studio
 -open route: http://localhost:5555
+
+23. Product & categories: relations
+-in schema.prisma file create model Category
+-in model Product add relation for model Category
+-type command: npx prisma migrate dev --name add_categories
+-type command: npx prisma studio
+-in folder prisma check folder migrations
+-open route: http://localhost:5555

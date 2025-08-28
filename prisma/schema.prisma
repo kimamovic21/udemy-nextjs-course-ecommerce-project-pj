@@ -21,4 +21,13 @@ model Product {
   description String
   images      String[]
   visible     Boolean  @default(true)
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String    @unique
+  products Product[]
 }
