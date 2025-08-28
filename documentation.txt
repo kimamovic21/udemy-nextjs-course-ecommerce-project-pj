@@ -118,3 +118,9 @@ Section 03: Product Listing Feature
 -open route: http://localhost:3000
 
 20. Summary
+
+
+
+Section 04: Database & product data
+
+21. Section intro & objectives
