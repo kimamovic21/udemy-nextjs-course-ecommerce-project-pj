@@ -1,8 +1,20 @@
 import { prisma } from '@/lib/prisma';
 import ProductCard from './product-card';
 
-const HomePage = async () => {
-  const products = await prisma.product.findMany();
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+const HomePage = async (props: { searchParams: SearchParams }) => {
+  const searchParams = await props.searchParams;
+
+  const currentPage = Number(searchParams.page) || 1;
+  const productsPerPage = 3;
+  const itemsToSkip = (currentPage - 1) * productsPerPage;
+
+  const products = await prisma.product.findMany({
+    skip: itemsToSkip,
+    take: productsPerPage,
+    orderBy: { id: 'asc' },
+  });
 
   await new Promise((resolve) => setTimeout(resolve, 500));
 

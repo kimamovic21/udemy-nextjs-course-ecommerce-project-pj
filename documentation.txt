@@ -229,3 +229,12 @@ Section 05: Adding shadcn/ui, suspense, pagination
 -in component loading.tsx import component ProductCardSkeleton from component product-card-skeleton.tsx
 -in div element with Tailwind CSS grid classes invoke function Array.from()
 -open route: http://localhost:3000
+
+36. Paginating products
+-in component app/page.tsx create type SearchParams
+-add to function HomePage() parameter props with type
+-add pagination logic
+-open route: http://localhost:3000
+-open route: http://localhost:3000/?page=1
+-open route: http://localhost:3000/?page=2
+-open route: http://localhost:3000/?page=3
