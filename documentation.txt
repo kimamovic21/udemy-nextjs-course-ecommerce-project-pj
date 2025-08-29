@@ -249,3 +249,6 @@ Section 05: Adding shadcn/ui, suspense, pagination
 -in jsx add pagination components
 -create variable const totalPages
 -open route: http://localhost:3000
+
+38. Search params & dynamic APIs
+-open link: https://nextjs.org/docs/messages/sync-dynamic-apis
