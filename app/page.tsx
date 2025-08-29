@@ -52,7 +52,13 @@ const HomePage = async (props: { searchParams: SearchParams }) => {
       <Pagination className='mt-8'>
         <PaginationContent>
           <PaginationItem>
-            <PaginationPrevious href={`?page=${currentPage - 1}`} />
+            {currentPage > 1 ? (
+              <PaginationPrevious href={`?page=${currentPage - 1}`} />
+            ) : (
+              <span className='opacity-50 cursor-not-allowed px-3 py-2'>
+                Previous
+              </span>
+            )}
           </PaginationItem>
 
           {Array.from({ length: totalPages }, (_, index) => (
@@ -67,7 +73,13 @@ const HomePage = async (props: { searchParams: SearchParams }) => {
           ))}
 
           <PaginationItem>
-            <PaginationNext href={`?page=${currentPage + 1}`} />
+            {currentPage < totalPages ? (
+              <PaginationNext href={`?page=${currentPage + 1}`} />
+            ) : (
+              <span className='opacity-50 cursor-not-allowed px-3 py-2'>
+                Next
+              </span>
+            )}
           </PaginationItem>
         </PaginationContent>
       </Pagination>
