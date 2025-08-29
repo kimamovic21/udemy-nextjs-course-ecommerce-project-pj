@@ -219,3 +219,13 @@ Section 05: Adding shadcn/ui, suspense, pagination
 -open route: http://localhost:3000/products
 -create component loading.tsx
 -in component app/page.tsx invoke function await new Promise()
+-open route: http://localhost:3000
+-open route: http://localhost:3000/products
+
+35. Adding loading skeleton for products
+-create component product-card-skeleton.tsx
+-in component product-card-skeleton.tsx import component Skeleton from component skeleton.tsx 
+-import card components from component card.tsx
+-in component loading.tsx import component ProductCardSkeleton from component product-card-skeleton.tsx
+-in div element with Tailwind CSS grid classes invoke function Array.from()
+-open route: http://localhost:3000
