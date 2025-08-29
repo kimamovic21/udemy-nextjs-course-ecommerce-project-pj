@@ -265,3 +265,5 @@ Section 05: Adding shadcn/ui, suspense, pagination
 -in component HomePage() add component Suspense with two props
 -in component Suspense add component Products
 -open route: http://localhost:3000
+
+40. Summary
