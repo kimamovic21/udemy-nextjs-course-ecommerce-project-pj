@@ -238,3 +238,14 @@ Section 05: Adding shadcn/ui, suspense, pagination
 -open route: http://localhost:3000/?page=1
 -open route: http://localhost:3000/?page=2
 -open route: http://localhost:3000/?page=3
+
+37. Adding pagination links
+-open link: https://ui.shadcn.com/docs/components/pagination
+-type command: npx shadcn@latest add pagination
+-in component pagination.tsx import component Link from package next/link
+-import type for component Link
+-in component app/page.tsx import pagination components from component pagination.tsx
+-invoke function await Promise.all()
+-in jsx add pagination components
+-create variable const totalPages
+-open route: http://localhost:3000
