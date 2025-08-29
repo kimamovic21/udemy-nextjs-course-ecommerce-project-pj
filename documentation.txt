@@ -252,3 +252,16 @@ Section 05: Adding shadcn/ui, suspense, pagination
 
 38. Search params & dynamic APIs
 -open link: https://nextjs.org/docs/messages/sync-dynamic-apis
+
+39. Using Suspense with searchParams
+-create component products-skeleton.tsx
+-in component products-skeleton.tsx import component ProductCardSkeleton from component product-card-skeleton.tsx
+-in component loading.tsx import component ProductsSkeleton from component products-skeleton.tsx
+-open link: https://react.dev/reference/react/Suspense
+-in component app/page.tsx create async function Products()
+-import component Suspense from package react
+-import component ProductsSkeleton from component products-skeleton.tsx
+-update pagination logic
+-in component HomePage() add component Suspense with two props
+-in component Suspense add component Products
+-open route: http://localhost:3000

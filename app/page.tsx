@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { prisma } from '@/lib/prisma';
 import {
   Pagination,
@@ -8,27 +9,44 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination';
 import ProductCard from './product-card';
+import ProductsSkeleton from './products-skeleton';
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-const HomePage = async (props: { searchParams: SearchParams }) => {
-  const searchParams = await props.searchParams;
-
-  const currentPage = Number(searchParams.page) || 1;
+const Products = async ({ currentPage }: { currentPage: number }) => {
   const productsPerPage = 3;
+
   const itemsToSkip = (currentPage - 1) * productsPerPage;
 
-  const [products, totalProducts] = await Promise.all([
-    prisma.product.findMany({
-      skip: itemsToSkip,
-      take: productsPerPage,
-    }),
-    prisma.product.count(),
-  ]);
-
-  const totalPages = Math.ceil(totalProducts / productsPerPage);
+  const products = await prisma.product.findMany({
+    skip: itemsToSkip,
+    take: productsPerPage,
+  });
 
   await new Promise((resolve) => setTimeout(resolve, 500));
+
+  return (
+    <>
+      <p>
+        Showing {products.length} products
+      </p>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+const HomePage = async (props: { searchParams: SearchParams }) => {
+  const productsPerPage = 3;
+
+  const searchParams = await props.searchParams;
+  const currentPage = Number(searchParams.page) || 1;
+
+  const totalProducts = await prisma.product.count();
+  const totalPages = Math.ceil(totalProducts / productsPerPage);
 
   return (
     <main className='container mx-auto p-4'>
@@ -36,18 +54,9 @@ const HomePage = async (props: { searchParams: SearchParams }) => {
         Home
       </h1>
 
-      <p>
-        Showing {products.length} products
-      </p>
-
-      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-          />
-        ))}
-      </div>
+      <Suspense key={currentPage} fallback={<ProductsSkeleton />}>
+        <Products currentPage={currentPage} />
+      </Suspense>
 
       <Pagination className='mt-8'>
         <PaginationContent>

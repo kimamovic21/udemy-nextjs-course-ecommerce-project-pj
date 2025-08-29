@@ -1,4 +1,4 @@
-import ProductCardSkeleton from './product-card-skeleton';
+import ProductsSkeleton from './products-skeleton';
 
 const Loading = () => {
   return (
@@ -7,11 +7,7 @@ const Loading = () => {
         Home
       </h1>
 
-      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-        {Array.from({ length: 6 }).map((_, i) => (
-          <ProductCardSkeleton key={i} />
-        ))}
-      </div>
+      <ProductsSkeleton />
     </main>
   );
 };
