@@ -205,3 +205,6 @@ Section 05: Adding shadcn/ui, suspense, pagination
 -in component product-card.tsx import card components from component ui/card.tsx
 -in jsx replace HTML elements with shadcn components
 -open route: http://localhost:3000
+
+33. What's loading UI ?
+-open link: https://nextjs.org/docs/14/app/building-your-application/routing/loading-ui-and-streaming
