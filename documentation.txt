@@ -208,3 +208,14 @@ Section 05: Adding shadcn/ui, suspense, pagination
 
 33. What's loading UI ?
 -open link: https://nextjs.org/docs/14/app/building-your-application/routing/loading-ui-and-streaming
+
+34. Creating the loading UI for products
+-open link: https://nextjs.org/learn/dashboard-app/navigating-between-pages
+-open link: https://nextjs.org/docs/pages/api-reference/components/link
+-open link: https://nextjs.org/docs/app/api-reference/file-conventions/loading
+-open link: https://tailwindcss.com/docs/animation
+-in component layout.tsx import component Link from package next/link
+-open route: http://localhost:3000
+-open route: http://localhost:3000/products
+-create component loading.tsx
+-in component app/page.tsx invoke function await new Promise()
