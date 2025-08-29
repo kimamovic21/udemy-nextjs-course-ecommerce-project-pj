@@ -200,3 +200,8 @@ Section 05: Adding shadcn/ui, suspense, pagination
 -open folder components/ui to see created components
 -open globals.css file to see updates that were added by shadcn library
 -open utils.ts file to see function cn() that was added by shadcn library
+
+32. Enhancing the product card
+-in component product-card.tsx import card components from component ui/card.tsx
+-in jsx replace HTML elements with shadcn components
+-open route: http://localhost:3000
