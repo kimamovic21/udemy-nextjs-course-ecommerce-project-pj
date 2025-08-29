@@ -191,3 +191,12 @@ Section 05: Adding shadcn/ui, suspense, pagination
 
 
 30. What is shadcn/ui ?
+
+31. Setting up & understanding shadcn/ui basics
+-open link: https://ui.shadcn.com
+-open link: https://ui.shadcn.com/docs/installation/next
+-type command: npx shadcn@latest init
+-type command: npx shadcn@latest add card badge skeleton
+-open folder components/ui to see created components
+-open globals.css file to see updates that were added by shadcn library
+-open utils.ts file to see function cn() that was added by shadcn library
