@@ -319,3 +319,9 @@ Section 06: Product page & dynamic routes
 -in component [slug]/page.tsx create and export async function generateMetadata()
 -open route: http://localhost:3000
 -open route: http://localhost:3000/product/[slug]
+
+47. Product page with images
+-in component [slug]/page.tsx import component Image
+-in jsx add conditional rendering product.image &&
+-open route: http://localhost:3000
+-open route: http://localhost:3000/product/[slug]
