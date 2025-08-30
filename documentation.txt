@@ -338,3 +338,8 @@ Section 06: Product page & dynamic routes
 -in component [slug]/page.tsx add ternary condition for product.inventory > 0 
 -fix div element to display image on small screen
 -open route: http://localhost:3000/product/[slug]
+
+50. Add to cart placeholder
+-in component [slug]/page.tsx import components Button and ShoppingCart
+-in jsx add div element for displaying Add to cart button
+-open route: http://localhost:3000/product/[slug]
