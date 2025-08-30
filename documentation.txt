@@ -267,3 +267,14 @@ Section 05: Adding shadcn/ui, suspense, pagination
 -open route: http://localhost:3000
 
 40. Summary
+
+
+
+Section 06: Product page & dynamic routes
+
+
+41. Using and understanding server actions
+-open link: https://nextjs.org/docs/14/app/building-your-application/data-fetching/server-actions-and-mutations
+-in folder lib create actions.ts file
+-in actions.ts file create and export async function getProductBySlug()
+-open route: http://localhost:3000
