@@ -333,3 +333,8 @@ Section 06: Product page & dynamic routes
 -type command: npm run seed
 -type command: npx prisma studio
 -open route: http://localhost:5555
+
+49. Product inventory UI and image fix
+-in component [slug]/page.tsx add ternary condition for product.inventory > 0 
+-fix div element to display image on small screen
+-open route: http://localhost:3000/product/[slug]
