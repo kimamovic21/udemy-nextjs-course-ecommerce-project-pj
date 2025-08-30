@@ -300,3 +300,9 @@ Section 06: Product page & dynamic routes
 -in component not-found.tsx create and export function NotFound() as default
 -open route: http://localhost:3000/product/[slug]
 -open route: http://localhost:3000/product/test
+
+44. Loading category & improving product page UI
+-open link: https://ui.shadcn.com/docs/components/separator
+-type command: npx shadcn@latest add separator
+-in actions.ts file add object include
+-open route: http://localhost:3000/product/[slug]
