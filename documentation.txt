@@ -278,3 +278,19 @@ Section 06: Product page & dynamic routes
 -in folder lib create actions.ts file
 -in actions.ts file create and export async function getProductBySlug()
 -open route: http://localhost:3000
+
+42. Dynamic routes - product page
+-open link: https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes
+-open link: https://nextjs.org/docs/app/api-reference/functions/not-found
+-create folders product, [slug] and component page.tsx
+-in component [slug]/page.tsx create and export function ProductPage()
+-add to function ProductPage() parameter destructured prop with type
+-import functions getProductBySlug, notFound and formatPrice
+-invoke function await params()
+-create variable const product
+-add condition if (!product)
+-in jsx create HTML elements with Tailwind CSS classes for displaying product data
+-in component product-card.tsx import component Link
+-in jsx wrap component Card with component Link
+-open route: http://localhost:3000/product/[slug]
+-open route: http://localhost:3000/product/test
