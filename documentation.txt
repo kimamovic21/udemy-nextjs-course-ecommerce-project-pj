@@ -294,3 +294,9 @@ Section 06: Product page & dynamic routes
 -in jsx wrap component Card with component Link
 -open route: http://localhost:3000/product/[slug]
 -open route: http://localhost:3000/product/test
+
+43. 404 Custom page
+-in folder [slug] create component not-found.tsx
+-in component not-found.tsx create and export function NotFound() as default
+-open route: http://localhost:3000/product/[slug]
+-open route: http://localhost:3000/product/test
