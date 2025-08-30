@@ -343,3 +343,5 @@ Section 06: Product page & dynamic routes
 -in component [slug]/page.tsx import components Button and ShoppingCart
 -in jsx add div element for displaying Add to cart button
 -open route: http://localhost:3000/product/[slug]
+
+51. Summary
