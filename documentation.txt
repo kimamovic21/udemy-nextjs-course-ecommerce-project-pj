@@ -313,3 +313,9 @@ Section 06: Product page & dynamic routes
 -in components app/page.tsx and [slug]/page.tsx import and invoke function sleep()
 -open route: http://localhost:3000
 -open route: http://localhost:3000/product/[slug]
+
+46. Adding metadata and SEO optimization
+-open link: https://nextjs.org/docs/app/getting-started/metadata-and-og-images
+-in component [slug]/page.tsx create and export async function generateMetadata()
+-open route: http://localhost:3000
+-open route: http://localhost:3000/product/[slug]

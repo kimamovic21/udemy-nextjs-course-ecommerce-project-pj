@@ -5,6 +5,34 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const { slug } = await params;
+
+  const product = await getProductBySlug(slug);
+
+  if (!product) {
+    return {};
+  };
+
+  return {
+    title: product.name,
+    description: product.description,
+    openGraph: {
+      title: product.name,
+      description: product.description,
+      images: [
+        {
+          url: product.image,
+        },
+      ],
+    },
+  };
+};
+
 const ProductPage = async ({
   params,
 }: {
@@ -13,6 +41,7 @@ const ProductPage = async ({
   const { slug } = await params;
 
   const product = await getProductBySlug(slug);
+
   if (!product) {
     notFound();
   };
