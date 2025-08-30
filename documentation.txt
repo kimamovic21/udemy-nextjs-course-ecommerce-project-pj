@@ -345,3 +345,15 @@ Section 06: Product page & dynamic routes
 -open route: http://localhost:3000/product/[slug]
 
 51. Summary
+
+
+
+Section 07: Navigation layout enhancements
+
+
+52. Dark and light mode: Next themes
+-open link: https://ui.shadcn.com/docs/dark-mode/next
+-in folder components create folder themes and component theme-provider.tsx
+-in component theme-provider.tsx add code from documentation
+-in component layout.tsx import component ThemeProvider from component theme-provider.tsx
+-open route: http://localhost:3000
