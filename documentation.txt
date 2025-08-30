@@ -371,3 +371,10 @@ Section 07: Navigation layout enhancements
 -in component navbar.tsx, in jsx create HTML elements with Tailwind CSS classes
 -in component layout.tsx import component Navbar from component navbar.tsx
 -open route: http://localhost:3000
+
+55. Adding icons to navigation bar
+-in component navbar.tsx, in jsx create div element with Tailwind CSS classes
+-import component Button and ThemeToggle
+-import React icons Search and ShoppingCart from package lucide-react
+-in component theme-toggle update prop variant
+-open route: http://localhost:3000
