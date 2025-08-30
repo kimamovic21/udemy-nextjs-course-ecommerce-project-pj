@@ -306,3 +306,10 @@ Section 06: Product page & dynamic routes
 -type command: npx shadcn@latest add separator
 -in actions.ts file add object include
 -open route: http://localhost:3000/product/[slug]
+
+45. Loading state for product
+-in folder [slug] create component loading.tsx
+-in utils.ts file create and export async function sleep()
+-in components app/page.tsx and [slug]/page.tsx import and invoke function sleep()
+-open route: http://localhost:3000
+-open route: http://localhost:3000/product/[slug]

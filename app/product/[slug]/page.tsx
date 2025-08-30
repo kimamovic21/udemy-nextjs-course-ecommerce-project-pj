@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getProductBySlug } from '@/lib/actions';
-import { formatPrice } from '@/lib/utils';
+import { formatPrice, sleep } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -16,6 +16,8 @@ const ProductPage = async ({
   if (!product) {
     notFound();
   };
+
+  await sleep(500);
 
   return (
     <main className='container mx-auto p-4'>

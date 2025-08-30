@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { prisma } from '@/lib/prisma';
+import { sleep } from '@/lib/utils';
 import {
   Pagination,
   PaginationContent,
@@ -23,7 +24,7 @@ const Products = async ({ currentPage }: { currentPage: number }) => {
     take: productsPerPage,
   });
 
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await sleep(500);
 
   return (
     <>
