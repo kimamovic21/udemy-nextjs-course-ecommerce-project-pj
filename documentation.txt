@@ -325,3 +325,11 @@ Section 06: Product page & dynamic routes
 -in jsx add conditional rendering product.image &&
 -open route: http://localhost:3000
 -open route: http://localhost:3000/product/[slug]
+
+48. Adding product inventory
+-in schema.prisma file add to model Product property inventory
+-type command: npx prisma migrate dev --name add_product_inventory
+-update seed.ts file
+-type command: npm run seed
+-type command: npx prisma studio
+-open route: http://localhost:5555
