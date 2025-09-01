@@ -430,3 +430,12 @@ Section 08: Search feature
 -in folder shared create component search-input.tsx
 -in component navbar.tsx import component SearchInput from component search-input.tsx
 -open route: http://localhost:3000
+
+65. Search input logic
+-open link: https://nextjs.org/docs/app/api-reference/directives/use-client
+-open link: https://nextjs.org/docs/pages/api-reference/functions/use-router
+-open link: https://nextjs.org/docs/app/api-reference/functions/use-search-params
+-in component search-input.tsx add directive 'use client'
+-add logic for searching a product
+-open route: http://localhost:3000
+-open route: http://localhost:3000/search?query=test
