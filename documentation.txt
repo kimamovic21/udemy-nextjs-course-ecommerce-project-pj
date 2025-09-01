@@ -439,3 +439,11 @@ Section 08: Search feature
 -add logic for searching a product
 -open route: http://localhost:3000
 -open route: http://localhost:3000/search?query=test
+
+66. Creating a dummy search results page
+-create folder search and component page.tsx
+-in component page.tsx add logic for search params
+-in component layout.tsx create div element with Tailwind CSS flex classes
+-open route: http://localhost:3000
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search?query=test

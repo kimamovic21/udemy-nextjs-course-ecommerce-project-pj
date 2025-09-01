@@ -36,13 +36,17 @@ const RootLayout = ({
           enableSystem
           disableTransitionOnChange
         >
-          <header>
-            <Navbar />
-          </header>
+          <div className='flex flex-col min-h-screen'>
+            <header>
+              <Navbar />
+            </header>
 
-          {children}
+            <main className='flex-grow'>
+              {children}
+            </main>
 
-          <Footer />
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
