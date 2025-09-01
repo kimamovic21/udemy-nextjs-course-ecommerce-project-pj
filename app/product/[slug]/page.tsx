@@ -72,7 +72,7 @@ const ProductPage = async ({
     <main className='container mx-auto p-4'>
       <Breadcrumbs items={breadcrumbs} />
 
-      <Card className='max-w-3xl mx-auto'>
+      <Card>
         <CardContent className='p-6 grid grid-cols-1 md:grid-cols-2 gap-4'>
           <div className='relative rounded-lg overflow-hidden h-[200px] md:h-[400px]'>
             {product.image && (
@@ -138,15 +138,18 @@ const ProductPage = async ({
                 )}
               </div>
             </div>
-          </div>
 
-          <Separator className='my-4' />
+            <Separator className='my-4' />
 
-          <div>
-            <Button disabled={product.inventory === 0} className='w-full cursor-pointer'>
-              <ShoppingCart className='mr-1 w-4 h-4' />
-              {product.inventory > 0 ? 'Add to cart' : 'Out of stock'}
-            </Button>
+            <div>
+              <Button
+                disabled={product.inventory === 0}
+                className='w-full'
+              >
+                <ShoppingCart className='mr-1 w-4 h-4' />
+                {product.inventory > 0 ? 'Add to cart' : 'Out of stock'}
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>
