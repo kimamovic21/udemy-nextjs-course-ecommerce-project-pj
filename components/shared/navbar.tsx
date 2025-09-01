@@ -1,8 +1,9 @@
-import { Search, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import ThemeToggle from '../theme/theme-toggle';
 import MobileNav from './mobile-nav';
+import SearchInput from './search-input';
 
 const categories = [
   { id: 1, name: 'Electronics', href: '/category/electronics' },
@@ -36,13 +37,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className='flex items-center gap-0'>
-          <Button variant='ghost' size='icon' asChild>
-            <Link href='/search'>
-              <Search className='h-5 w-5' />
-            </Link>
-          </Button>
+        <div className='hidden md:block w-full mx-4 md:mx-8'>
+          <SearchInput />
+        </div>
 
+        <div className='flex items-center gap-0'>
           <Button variant='ghost' size='icon' asChild>
             <Link href='/cart'>
               <ShoppingCart className='h-5 w-5' />

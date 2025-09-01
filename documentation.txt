@@ -425,3 +425,8 @@ Section 08: Search feature
 63. How search will work ?
 -open link: https://ui.shadcn.com/docs/components/input
 -type command: npx shadcn@latest add input
+
+64. Creating and placing a search input
+-in folder shared create component search-input.tsx
+-in component navbar.tsx import component SearchInput from component search-input.tsx
+-open route: http://localhost:3000
