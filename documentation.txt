@@ -380,3 +380,11 @@ Section 07: Navigation layout enhancements
 -open route: http://localhost:3000
 
 56. Mobile only navigation menu - explained
+
+57. Creating the mobile navigation using Sheet
+-open link: https://ui.shadcn.com/docs/components/sheet
+-type command: npx shadcn@latest add sheet
+-in folder shared create component mobile-nav.tsx
+-in component mobile-nav.tsx import components Sheet and SheetTrigger from component ui/sheet.tsx
+-in component navbar.tsx import component MobileNav from component mobile-nav.tsx
+-open route: http://localhost:3000
