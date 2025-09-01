@@ -416,3 +416,12 @@ Section 07: Navigation layout enhancements
 -open route: http://localhost:3000/product/[slug]
 
 62. Summary
+
+
+
+Section 08: Search feature
+
+
+63. How search will work ?
+-open link: https://ui.shadcn.com/docs/components/input
+-type command: npx shadcn@latest add input
