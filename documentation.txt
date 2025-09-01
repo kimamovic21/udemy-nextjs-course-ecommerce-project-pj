@@ -414,3 +414,5 @@ Section 07: Navigation layout enhancements
 -in components app/loading.tsx and [slug]/loading.tsx import component BreadcrumbsSkeleton from component breadcrumbs-skeleton.tsx
 -open route: http://localhost:3000
 -open route: http://localhost:3000/product/[slug]
+
+62. Summary
