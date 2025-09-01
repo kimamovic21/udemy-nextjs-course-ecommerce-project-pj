@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Breadcrumbs from '@/components/shared/breadcrumbs';
 
 export const generateMetadata = async ({
   params,
@@ -49,10 +50,28 @@ const ProductPage = async ({
     notFound();
   };
 
+  const breadcrumbs = [
+    {
+      label: 'Products',
+      href: '/'
+    },
+    {
+      label: product.category?.name,
+      href: `/category/${product.category?.slug}`,
+    },
+    {
+      label: product.name,
+      href: `/product/${product.slug}`,
+      active: true
+    },
+  ];
+
   await sleep(500);
 
   return (
     <main className='container mx-auto p-4'>
+      <Breadcrumbs items={breadcrumbs} />
+
       <Card className='max-w-3xl mx-auto'>
         <CardContent className='p-6 grid grid-cols-1 md:grid-cols-2 gap-4'>
           <div className='relative rounded-lg overflow-hidden h-[200px] md:h-[400px]'>

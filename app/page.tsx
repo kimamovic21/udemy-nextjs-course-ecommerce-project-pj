@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/pagination';
 import ProductCard from './product-card';
 import ProductsSkeleton from './products-skeleton';
+import Breadcrumbs from '@/components/shared/breadcrumbs';
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
@@ -47,10 +48,8 @@ const HomePage = async (props: { searchParams: SearchParams }) => {
   const totalPages = Math.ceil(totalProducts / productsPerPage);
 
   return (
-    <main className='container mx-auto py-4'>
-      <h1 className='text-3xl font-bold mb-6'>
-        Home
-      </h1>
+    <main className='container mx-auto p-4'>
+      <Breadcrumbs items={[{ label: 'Products', href: '/products' }]} />
 
       <Suspense key={currentPage} fallback={<ProductsSkeleton />}>
         <Products currentPage={currentPage} />
