@@ -388,3 +388,7 @@ Section 07: Navigation layout enhancements
 -in component mobile-nav.tsx import components Sheet and SheetTrigger from component ui/sheet.tsx
 -in component navbar.tsx import component MobileNav from component mobile-nav.tsx
 -open route: http://localhost:3000
+
+58. Mobile navigation content
+-in component mobile-nav.tsx import remaining components from component sheet.tsx
+-open route: http://localhost:3000
