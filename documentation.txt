@@ -392,3 +392,8 @@ Section 07: Navigation layout enhancements
 58. Mobile navigation content
 -in component mobile-nav.tsx import remaining components from component sheet.tsx
 -open route: http://localhost:3000
+
+59. Adding footer and fixing layout issues
+-in folder shared create component footer.tsx
+-in component layout.tsx import component Footer from component footer.tsx
+-open route: http://localhost:3000
