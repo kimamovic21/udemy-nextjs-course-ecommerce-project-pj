@@ -2,11 +2,9 @@ import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import { sleep } from '@/lib/utils';
-import Link from 'next/link';
 import ProductCard from '@/app/product-card';
 import ProductsSkeleton from '@/app/products-skeleton';
 import Breadcrumbs from '@/components/shared/breadcrumbs';
-import CategorySidebar from '@/components/shared/category-sidebar';
 
 type CategoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -94,12 +92,6 @@ const CategoryPage = async ({
   return (
     <>
       <Breadcrumbs items={breadcrumbs} />
-
-      <div className='flex gap-3 text-sm mb-8'>
-        <Link href={`/search/${slug}`}>Latest</Link>
-        <Link href={`/search/${slug}?sort=price-asc`}>Price: Low to High</Link>
-        <Link href={`/search/${slug}?sort=price-desc`}>Price: High to Low</Link>
-      </div>
 
       <Suspense
         key={`${slug}-${sort}`}

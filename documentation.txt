@@ -506,3 +506,14 @@ Section 09: Categories & product discovery
 -open route: http://localhost:3000/search/electronics
 -open route: http://localhost:3000/search/clothing
 -open route: http://localhost:3000/search/home
+
+76. Sorting controls in layout
+-in folder shared create component sorting-controls.tsx
+-in component sorting-controls.tsx add directive 'use client'
+-in component sorting-controls.tsx add sorting logic
+-in component layout.tsx import component SortingControls from component sorting-controls.tsx
+-in component [slug]/page.tsx remove sorting logic
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search/electronics
+-open route: http://localhost:3000/search/clothing
+-open route: http://localhost:3000/search/home
