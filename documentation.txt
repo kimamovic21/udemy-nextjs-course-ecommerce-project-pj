@@ -447,3 +447,9 @@ Section 08: Search feature
 -open route: http://localhost:3000
 -open route: http://localhost:3000/search
 -open route: http://localhost:3000/search?query=test
+
+67. Working search feature
+-in component search/page.tsx import two functions and four components
+-add logic for searching a product
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search?query=test
