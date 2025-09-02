@@ -71,7 +71,7 @@ const HomePage = async (props: { searchParams: SearchParams }) => {
             <PaginationItem key={index}>
               <PaginationLink
                 href={`?page=${index + 1}`}
-                className={currentPage === index + 1 ? 'active' : ''}
+                isActive={currentPage === index + 1}
               >
                 {index + 1}
               </PaginationLink>

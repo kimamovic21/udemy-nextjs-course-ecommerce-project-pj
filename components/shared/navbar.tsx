@@ -37,7 +37,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className='hidden md:block w-full mx-4 md:mx-8'>
+        <div className='block w-full mx-4 md:mx-8'>
           <SearchInput />
         </div>
 

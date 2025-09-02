@@ -453,3 +453,5 @@ Section 08: Search feature
 -add logic for searching a product
 -open route: http://localhost:3000/search
 -open route: http://localhost:3000/search?query=test
+
+68. Fixing UI/UX issues
