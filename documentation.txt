@@ -488,3 +488,10 @@ Section 09: Categories & product discovery
 -open route: http://localhost:3000/search/electronics
 -open route: http://localhost:3000/search/clothing
 -open route: http://localhost:3000/search/home
+
+73. Nested layouts with categories and sorting
+-in component search create component layout.tsx
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search/electronics
+-open route: http://localhost:3000/search/clothing
+-open route: http://localhost:3000/search/home
