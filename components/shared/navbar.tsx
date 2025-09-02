@@ -5,10 +5,10 @@ import ThemeToggle from '../theme/theme-toggle';
 import MobileNav from './mobile-nav';
 import SearchInput from './search-input';
 
-const categories = [
-  { id: 1, name: 'Electronics', href: '/category/electronics' },
-  { id: 2, name: 'Fashion', href: '/category/fashion' },
-  { id: 3, name: 'Home', href: '/category/home' },
+export const categories = [
+  { id: 1, name: 'Electronics', href: '/search/electronics' },
+  { id: 2, name: 'Clothing', href: '/search/clothing' },
+  { id: 3, name: 'Home', href: '/search/home' },
 ];
 
 const Navbar = () => {

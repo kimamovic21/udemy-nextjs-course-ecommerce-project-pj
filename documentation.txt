@@ -460,4 +460,14 @@ Section 08: Search feature
 
 Section 09: Categories & product discovery
 
+
 69. Section intro & objectives
+
+70. Products by category page
+-in folder search create folder [slug] and component page.tsx
+-in [slug]/page.tsx add logic for displaying products for given slug from params
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search/electronics
+-open route: http://localhost:3000/search/clothing
+-open route: http://localhost:3000/search/home
+-open route: http://localhost:3000/search?query=test
