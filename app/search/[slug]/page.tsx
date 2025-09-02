@@ -6,6 +6,7 @@ import Link from 'next/link';
 import ProductCard from '@/app/product-card';
 import ProductsSkeleton from '@/app/products-skeleton';
 import Breadcrumbs from '@/components/shared/breadcrumbs';
+import CategorySidebar from '@/components/shared/category-sidebar';
 
 type CategoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -106,12 +107,24 @@ const CategoryPage = async ({
         </Link>
       </div>
 
-      <Suspense
-        key={`${slug}-${sort}`}
-        fallback={<ProductsSkeleton />}
-      >
-        <Products slug={slug} sort={sort} />
-      </Suspense>
+      <div className='flex gap-8'>
+        <Suspense fallback={
+          <div className='w-[125px]'>
+            Loading...
+          </div>
+        }>
+          <CategorySidebar />
+        </Suspense>
+
+        <div className='flex-1'>
+          <Suspense
+            key={`${slug}-${sort}`}
+            fallback={<ProductsSkeleton />}
+          >
+            <Products slug={slug} sort={sort} />
+          </Suspense>
+        </div>
+      </div>
     </main>
   );
 };

@@ -13,7 +13,7 @@ export const categories = [
 
 const Navbar = () => {
   return (
-    <div className='border-b border-dashed'>
+    <div className='border-b border-dashed px-2'>
       <div className='container mx-auto flex h-16 items-center justify-between'>
         <div>
           <div className='flex items-center gap-6'>
