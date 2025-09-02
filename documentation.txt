@@ -498,3 +498,11 @@ Section 09: Categories & product discovery
 
 74. A case for server/client wrapper
 -open link: https://nextjs.org/docs/app/api-reference/functions/use-params
+
+75. Server wrapper for category sidebar
+-in component layout.tsx create async function CategorySidebarServerWrapper()
+-in component category-sidebar.tsx add logic for product params
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search/electronics
+-open route: http://localhost:3000/search/clothing
+-open route: http://localhost:3000/search/home
