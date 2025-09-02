@@ -471,3 +471,12 @@ Section 09: Categories & product discovery
 -open route: http://localhost:3000/search/clothing
 -open route: http://localhost:3000/search/home
 -open route: http://localhost:3000/search?query=test
+
+71. Adding basic sorting feature to product list
+-in component [slug]/page.tsx import component Link
+-add logic for sorting products
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search/electronics
+-open route: http://localhost:3000/search/clothing
+-open route: http://localhost:3000/search/home
+-open route: http://localhost:3000/search?query=test
