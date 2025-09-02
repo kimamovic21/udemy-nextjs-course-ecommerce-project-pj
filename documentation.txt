@@ -455,3 +455,9 @@ Section 08: Search feature
 -open route: http://localhost:3000/search?query=test
 
 68. Fixing UI/UX issues
+
+
+
+Section 09: Categories & product discovery
+
+69. Section intro & objectives
