@@ -556,3 +556,8 @@ Section 10: Cart feature
 -type command: npx prisma studio
 
 82. Cart feature strategy: Handling anonymous users & cookies
+
+83. Why custom types ? Typing our cart with Prisma's GetPayload
+-in folder lib create types.ts file
+-in types.ts file import type Prisma from folder generated
+-create and export types CartWithProducts and ShoppingCart
