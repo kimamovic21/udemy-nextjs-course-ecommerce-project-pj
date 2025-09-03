@@ -531,3 +531,15 @@ Section 09: Categories & product discovery
 -in folder shared create component product-list.tsx
 -in actions.ts file create and export async function getProducts()
 -open route: http://localhost:3000/search
+
+80. Refactoring pages to use getProducts
+-in folder shared create component product-list-server-wrapper.tsx
+-in component product-list-server-wrapper.tsx import functions getProducts, sleep and component ProductList
+-in component app/page.tsx import component ProductListServerWrapper from component product-list-server-wrapper.tsx
+-in component search/page.tsx import component ProductListServerWrapper
+-in component [slug]/page.tsx import component ProductListServerWrapper
+-open route: http://localhost:3000
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search/electronics
+-open route: http://localhost:3000/search/clothing
+-open route: http://localhost:3000/search/home

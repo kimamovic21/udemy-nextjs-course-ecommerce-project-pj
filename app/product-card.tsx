@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { formatPrice } from '@/lib/utils';
-import { Product } from './generated/prisma';
+import type { Product } from './generated/prisma';
 import Image from 'next/image';
 import Link from 'next/link';
 
