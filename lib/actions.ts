@@ -1,7 +1,7 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { prisma } from './prisma';
+import { prisma } from '@/lib/prisma';
 import type { Prisma } from '@/app/generated/prisma';
 import type { CartWithProducts, ShoppingCart } from './types';
 

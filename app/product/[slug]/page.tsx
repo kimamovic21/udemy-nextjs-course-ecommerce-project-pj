@@ -1,13 +1,12 @@
 import { notFound } from 'next/navigation';
-import { ShoppingCart } from 'lucide-react';
 import { getProductBySlug } from '@/lib/actions';
 import { formatPrice, sleep } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Breadcrumbs from '@/components/shared/breadcrumbs';
+import AddToCartButton from '@/components/shared/add-to-cart-button';
 
 export const generateMetadata = async ({
   params,
@@ -141,15 +140,7 @@ const ProductPage = async ({
 
             <Separator className='my-4' />
 
-            <div>
-              <Button
-                disabled={product.inventory === 0}
-                className='w-full'
-              >
-                <ShoppingCart className='mr-1 w-4 h-4' />
-                {product.inventory > 0 ? 'Add to cart' : 'Out of stock'}
-              </Button>
-            </div>
+            <AddToCartButton product={product} />
           </div>
         </CardContent>
       </Card>

@@ -578,3 +578,10 @@ Section 10: Cart feature
 
 86. Adding & updating items: The core addToCart logic
 -in actions.ts file create and export async function addToCart()
+
+87. Putting it together: AddToCartButton
+-in folder shared create component add-to-cart-button.tsx
+-in component [slug]/page.tsx import component AddToCartButton from component add-to-cart-button.tsx
+-update imports in files actions.ts and prisma.ts
+-open route: http://localhost:3000/product/[slug] and click Add to cart button
+-open route: http://localhost:5555 to see products in cart
