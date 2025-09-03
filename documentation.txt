@@ -517,3 +517,10 @@ Section 09: Categories & product discovery
 -open route: http://localhost:3000/search/electronics
 -open route: http://localhost:3000/search/clothing
 -open route: http://localhost:3000/search/home
+
+77. Sorting working on search page
+-in component search/page.tsx add sort logic
+-open route: http://localhost:3000/search
+-open route: http://localhost:3000/search/electronics
+-open route: http://localhost:3000/search/clothing
+-open route: http://localhost:3000/search/home
