@@ -543,3 +543,14 @@ Section 09: Categories & product discovery
 -open route: http://localhost:3000/search/electronics
 -open route: http://localhost:3000/search/clothing
 -open route: http://localhost:3000/search/home
+
+
+
+Section 10: Cart feature
+
+
+81. Designing & migrating the cart database schema
+-in schema.prisma create models Cart and CartItem
+-add to model Product field cartItems
+-type command: npx prisma migrate dev --name add_cart_models
+-type command: npx prisma studio
