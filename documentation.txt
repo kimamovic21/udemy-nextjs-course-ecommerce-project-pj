@@ -554,3 +554,5 @@ Section 10: Cart feature
 -add to model Product field cartItems
 -type command: npx prisma migrate dev --name add_cart_models
 -type command: npx prisma studio
+
+82. Cart feature strategy: Handling anonymous users & cookies
