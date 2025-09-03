@@ -526,3 +526,8 @@ Section 09: Categories & product discovery
 -open route: http://localhost:3000/search/home
 
 78. A case for extracting common code
+
+79. Common ProductList and getProducts server action
+-in folder shared create component product-list.tsx
+-in actions.ts file create and export async function getProducts()
+-open route: http://localhost:3000/search
