@@ -575,3 +575,6 @@ Section 10: Cart feature
 -update function getCart()
 -create and export async function addToCart()
 -in .env file create variable NODE_ENV
+
+86. Adding & updating items: The core addToCart logic
+-in actions.ts file create and export async function addToCart()

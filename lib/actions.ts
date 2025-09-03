@@ -125,3 +125,32 @@ async function getOrCreateCart(): Promise<CartWithProducts> {
 
   return cart;
 };
+
+export async function addToCart(
+  productId: string,
+  quantity: number = 1
+) {
+  if (quantity < 1) {
+    throw new Error('Quantity must be at least 1');
+  };
+
+  const cart = await getOrCreateCart();
+  const existingItem = cart.items.find(
+    (item) => item.productId === productId
+  );
+
+  if (existingItem) {
+    await prisma.cartItem.update({
+      where: { id: existingItem.id },
+      data: { quantity: existingItem.quantity + quantity },
+    });
+  } else {
+    await prisma.cartItem.create({
+      data: {
+        cartId: cart.id,
+        productId,
+        quantity,
+      },
+    });
+  };
+};
