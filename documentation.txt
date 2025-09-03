@@ -561,3 +561,9 @@ Section 10: Cart feature
 -in folder lib create types.ts file
 -in types.ts file import type Prisma from folder generated
 -create and export types CartWithProducts and ShoppingCart
+
+84. Finding the right cart: Reading cookies with the getCart utility
+-open link: https://nextjs.org/docs/app/api-reference/functions/cookies
+-in actions.ts file import function cookies from package next/headers
+-import type ShoppingCart from types.ts file
+-create and export async function getCart()
