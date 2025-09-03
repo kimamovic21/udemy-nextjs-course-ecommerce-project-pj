@@ -25,7 +25,7 @@ const HomePage = async (props: { searchParams: SearchParams }) => {
 
   return (
     <main className='container mx-auto p-4'>
-      <Breadcrumbs items={[{ label: 'Products', href: '/products' }]} />
+      <Breadcrumbs items={[{ label: 'Search', href: '/search' }]} />
 
       <Suspense key={currentPage} fallback={<ProductsSkeleton />}>
         <ProductListServerWrapper

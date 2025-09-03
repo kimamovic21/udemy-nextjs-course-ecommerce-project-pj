@@ -585,3 +585,8 @@ Section 10: Cart feature
 -update imports in files actions.ts and prisma.ts
 -open route: http://localhost:3000/product/[slug] and click Add to cart button
 -open route: http://localhost:5555 to see products in cart
+
+88. Implementing the navbar cart counter
+-in folder shared create component cart-indicator.tsx
+-in component navbar.tsx import component CartIndicator from component cart-indicator.tsx
+-open route: http://localhost:3000/product/[slug] and click Add to cart button

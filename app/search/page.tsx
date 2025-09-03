@@ -14,8 +14,8 @@ const SearchPage = async ({ searchParams }: SearchPageProps) => {
 
   const breadcrumbs = [
     {
-      label: 'Products',
-      href: '/',
+      label: 'Search',
+      href: '/search',
     },
     {
       label: `Results for '${query}'`,
