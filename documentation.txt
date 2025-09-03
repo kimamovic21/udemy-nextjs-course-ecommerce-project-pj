@@ -567,3 +567,11 @@ Section 10: Cart feature
 -in actions.ts file import function cookies from package next/headers
 -import type ShoppingCart from types.ts file
 -create and export async function getCart()
+
+85. Starting fresh: The getOrCreateCart database utility
+-in actions.ts file create async function getOrCreateCart()
+-import type CartWithProducts from types.ts file
+-create async function findCartFromCookie()
+-update function getCart()
+-create and export async function addToCart()
+-in .env file create variable NODE_ENV

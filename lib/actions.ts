@@ -3,7 +3,7 @@
 import { cookies } from 'next/headers';
 import { prisma } from './prisma';
 import type { Prisma } from '@/app/generated/prisma';
-import type { ShoppingCart } from './types';
+import type { CartWithProducts, ShoppingCart } from './types';
 
 interface GetProductsParams {
   query?: string;
@@ -67,21 +67,29 @@ export async function getProductBySlug(slug: string) {
   return product;
 };
 
-export async function getCart(): Promise<ShoppingCart | null> {
+async function findCartFromCookie(): Promise<CartWithProducts | null> {
   const cartId = (await cookies()).get('cartId')?.value;
 
-  const cart = cartId
-    ? await prisma.cart.findUnique({
-      where: { id: cartId },
-      include: {
-        items: {
-          include: {
-            product: true,
-          },
+  if (!cartId) {
+    return null;
+  };
+
+  const cart = await prisma.cart.findUnique({
+    where: { id: cartId },
+    include: {
+      items: {
+        include: {
+          product: true,
         },
       },
-    })
-    : null;
+    },
+  });
+
+  return cart;
+};
+
+export async function getCart(): Promise<ShoppingCart | null> {
+  const cart = await findCartFromCookie();
 
   if (!cart) {
     return null;
@@ -95,4 +103,25 @@ export async function getCart(): Promise<ShoppingCart | null> {
       0
     ),
   };
+};
+
+async function getOrCreateCart(): Promise<CartWithProducts> {
+  let cart = await findCartFromCookie();
+
+  if (cart) {
+    return cart;
+  };
+
+  cart = await prisma.cart.create({
+    data: {},
+    include: { items: { include: { product: true } } },
+  });
+
+  (await cookies()).set('cartId', cart.id, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+  });
+
+  return cart;
 };
