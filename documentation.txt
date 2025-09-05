@@ -635,3 +635,10 @@ Section 11: The cart page
 
 95. Server action: setProductQuantity
 -in actions.ts file create and export async function setProductQuantity()
+
+96. Increasing and decreasing the cart item quantity
+-in component cart-entry.tsx add directive 'use client'
+-import functions useState and setProductQuantity
+-add logic for item quantity
+-in actions.ts file, in function setProductQuantity() invoke function revalidateTag()
+-open route: http://localhost:3000/cart

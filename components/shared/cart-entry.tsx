@@ -1,5 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import { Minus, Plus } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
+import { setProductQuantity } from '@/lib/actions';
 import type { CartItemWithProduct } from '@/lib/types';
 import { Button } from '../ui/button';
 import Image from 'next/image';
@@ -9,6 +13,30 @@ interface CartEntryProps {
 };
 
 const CartEntry = ({ cartItem }: CartEntryProps) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleIncrement = async () => {
+    setIsLoading(true);
+    try {
+      await setProductQuantity(cartItem.product.id, cartItem.quantity + 1);
+    } catch (error) {
+      console.error('Error incrementing cart item:', error);
+    } finally {
+      setIsLoading(false);
+    };
+  };
+
+  const handleDecrement = async () => {
+    setIsLoading(true);
+    try {
+      await setProductQuantity(cartItem.product.id, cartItem.quantity - 1);
+    } catch (error) {
+      console.error('Error decrementing cart item:', error);
+    } finally {
+      setIsLoading(false);
+    };
+  };
+
   return (
     <li className='border-b border-muted flex p-4 justify-between'>
       <div className='flex space-x-4'>
@@ -37,7 +65,12 @@ const CartEntry = ({ cartItem }: CartEntryProps) => {
         </p>
 
         <div className='flex items-center border border-muted rounded-full'>
-          <Button variant='ghost' className='rounded-l-full cursor-p'>
+          <Button
+            variant='ghost'
+            className='rounded-l-full cursor-pointer'
+            onClick={handleDecrement}
+            disabled={isLoading}
+          >
             <Minus className='h-4 w-4' />
           </Button>
 
@@ -45,7 +78,12 @@ const CartEntry = ({ cartItem }: CartEntryProps) => {
             {cartItem.quantity}
           </p>
 
-          <Button variant='ghost' className='rounded-r-full cursor-pointer'>
+          <Button
+            variant='ghost'
+            className='rounded-r-full cursor-pointer'
+            onClick={handleIncrement}
+            disabled={isLoading}
+          >
             <Plus className='h-4 w-4' />
           </Button>
         </div>
