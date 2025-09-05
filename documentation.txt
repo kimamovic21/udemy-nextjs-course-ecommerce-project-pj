@@ -660,3 +660,10 @@ Section 11: The cart page
 99. Adding loading UI for all things cart related
 -in folder cart create component loading.tsx
 -open route: http://localhost:3000/cart
+
+
+
+Section 12: Order management and Stripe integration for checkout
+
+
+100. Section intro & objectives
