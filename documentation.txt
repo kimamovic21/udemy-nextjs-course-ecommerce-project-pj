@@ -632,3 +632,6 @@ Section 11: The cart page
 94. CartEntry: UI fixes
 -in component cart-entry.tsx fix Tailwind CSS classes
 -open route: http://localhost:3000/cart
+
+95. Server action: setProductQuantity
+-in actions.ts file create and export async function setProductQuantity()
