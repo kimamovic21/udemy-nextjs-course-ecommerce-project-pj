@@ -1,11 +1,11 @@
 import { getCart } from '@/lib/actions';
+import CartEntry from '@/components/shared/cart-entry';
 
 const CartPage = async () => {
   const cart = await getCart();
-  console.log('Cart:', cart);
 
   return (
-    <main className='container mx-auto py-4'>
+    <main className='container mx-auto p-4'>
       {!cart || cart.items.length === 0 ? (
         <div className='text-center'>
           <h2 className='text-2xl'>
@@ -19,25 +19,7 @@ const CartPage = async () => {
       ) : (
         <div className='flex flex-col gap-4'>
           {cart.items.map((item) => (
-            <div
-              key={item.id}
-              className='flex items-center justify-between p-4 border-b'
-            >
-              <div>
-                <h2 className='text-xl'>
-                  {item.product.name}
-                </h2>
-                <p className='text-muted-foreground'>
-                  {item.product.description}
-                </p>
-              </div>
-
-              <div>
-                <span className='text-lg font-bold'>
-                  ${item.product.price}
-                </span>
-              </div>
-            </div>
+            <CartEntry key={item.id} cartItem={item} />
           ))}
         </div>
       )}

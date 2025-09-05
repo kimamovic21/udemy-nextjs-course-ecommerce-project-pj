@@ -618,3 +618,13 @@ Section 11: The cart page
 -in component cart/page.tsx add logic for displaying cart data
 -in types.ts file create and export type CartItemWithProduct
 -open route: http://localhost:3000/cart
+
+93. Creating the CartEntry component UI
+-in component cart-indicator-skeleton.tsx add to component Button class animate-pulse
+-in folder shared create component cart-entry.tsx
+-in component cart-entry.tsx import type CartItemWithProduct from types.ts file
+-import function formatPrice from utils.ts file
+-import components Minus, Plus, Button and Link
+-in component cart-entry.tsx add logic for displaying cart info
+-in component cart/page.tsx import component CartEntry from component cart-entry.tsx
+-open route: http://localhost:3000/cart
