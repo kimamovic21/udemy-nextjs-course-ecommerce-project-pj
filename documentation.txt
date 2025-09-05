@@ -606,3 +606,15 @@ Section 10: Cart feature
 -in component cart-indicator.tsx import and invoke function sleep from utils.ts file
 -in component navbar.tsx import components Suspense and CartIndicatorSkeleton
 -open route: http://localhost:3000/product/[slug] and click Add to cart button
+
+
+
+Section 11: The cart page
+
+
+92. Creating the cart page
+-in folder app create folder cart and component page.tsx
+-in component cart/page.tsx import function getCart from actions.ts file
+-in component cart/page.tsx add logic for displaying cart data
+-in types.ts file create and export type CartItemWithProduct
+-open route: http://localhost:3000/cart
