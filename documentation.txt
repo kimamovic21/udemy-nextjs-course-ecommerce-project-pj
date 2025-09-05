@@ -642,3 +642,8 @@ Section 11: The cart page
 -add logic for item quantity
 -in actions.ts file, in function setProductQuantity() invoke function revalidateTag()
 -open route: http://localhost:3000/cart
+
+97. Removing items from the cart
+-in component cart-entry.tsx add component Button for removing items from cart
+-create async function handleSetProductQuantity()
+-open route: http://localhost:3000/cart
