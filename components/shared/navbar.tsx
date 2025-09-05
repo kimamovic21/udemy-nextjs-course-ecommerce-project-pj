@@ -1,8 +1,10 @@
+import { Suspense } from 'react';
 import Link from 'next/link';
 import ThemeToggle from '../theme/theme-toggle';
 import MobileNav from './mobile-nav';
 import SearchInput from './search-input';
 import CartIndicator from './cart-indicator';
+import CartIndicatorSkeleton from './cart-indicator-skeleton';
 
 export const categories = [
   { id: 1, name: 'Electronics', href: '/search/electronics' },
@@ -41,7 +43,9 @@ const Navbar = () => {
         </div>
 
         <div className='flex items-center gap-0'>
-          <CartIndicator />
+          <Suspense fallback={<CartIndicatorSkeleton />}>
+            <CartIndicator />
+          </Suspense>
 
           <ThemeToggle />
         </div>

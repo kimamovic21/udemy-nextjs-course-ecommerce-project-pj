@@ -600,3 +600,9 @@ Section 10: Cart feature
 -in function findCartFromCookie() invoke function return unstable_cache
 -in function addToCart() invoke function revalidateTag()
 -open route: http://localhost:3000/product/[slug] and click Add to cart button
+
+91. Suspending cart indicator
+-in folder shared create component cart-indicator-skeleton.tsx
+-in component cart-indicator.tsx import and invoke function sleep from utils.ts file
+-in component navbar.tsx import components Suspense and CartIndicatorSkeleton
+-open route: http://localhost:3000/product/[slug] and click Add to cart button
