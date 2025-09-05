@@ -656,3 +656,7 @@ Section 11: The cart page
 -in component cart/page.tsx import component CartSummary from component cart-summary.tsx
 -in actions.ts file, in function findCartFromCookie() add object orderBy
 -open route: http://localhost:3000/cart
+
+99. Adding loading UI for all things cart related
+-in folder cart create component loading.tsx
+-open route: http://localhost:3000/cart
