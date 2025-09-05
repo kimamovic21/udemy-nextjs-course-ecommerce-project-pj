@@ -667,3 +667,9 @@ Section 12: Order management and Stripe integration for checkout
 
 
 100. Section intro & objectives
+
+101. Order & OrderItem Prisma schema
+-in prisma.schema file create models Order and 
+-add to model Product field orderItems
+-type command: npx prisma migrate dev --name add_order_models
+-type command: npx prisma studio
