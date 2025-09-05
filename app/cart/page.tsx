@@ -1,5 +1,6 @@
 import { getCart } from '@/lib/actions';
 import CartEntry from '@/components/shared/cart-entry';
+import CartSummary from '@/components/shared/cart-summary';
 
 const CartPage = async () => {
   const cart = await getCart();
@@ -17,11 +18,15 @@ const CartPage = async () => {
           </p>
         </div>
       ) : (
-        <div className='flex flex-col gap-4'>
-          {cart.items.map((item) => (
-            <CartEntry key={item.id} cartItem={item} />
-          ))}
-        </div>
+        <>
+          <div className="flex flex-col">
+            {cart.items.map((item) => (
+              <CartEntry key={item.id} cartItem={item} />
+            ))}
+          </div>
+
+          <CartSummary />
+        </>
       )}
     </main>
   );

@@ -647,3 +647,12 @@ Section 11: The cart page
 -in component cart-entry.tsx add component Button for removing items from cart
 -create async function handleSetProductQuantity()
 -open route: http://localhost:3000/cart
+
+98. Cart summary component
+-in folder shared create component cart-summary.tsx
+-in component cart-summary.tsx import functions getCart and formatPrice
+-import components Button and Link
+-add logic for displaying cart summary
+-in component cart/page.tsx import component CartSummary from component cart-summary.tsx
+-in actions.ts file, in function findCartFromCookie() add object orderBy
+-open route: http://localhost:3000/cart
