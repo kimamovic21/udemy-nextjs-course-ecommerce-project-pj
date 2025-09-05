@@ -6,8 +6,6 @@ import Link from 'next/link';
 const CartIndicator = async () => {
   const cart = await getCart();
   const cartSize = cart?.size ?? 0;
-  console.log('Cart:', cart);
-  console.log('Cart size:', cartSize);
 
   return (
     <Button variant='ghost' size='icon' asChild className='relative'>

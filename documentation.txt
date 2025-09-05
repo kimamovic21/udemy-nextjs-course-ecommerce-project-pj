@@ -590,3 +590,6 @@ Section 10: Cart feature
 -in folder shared create component cart-indicator.tsx
 -in component navbar.tsx import component CartIndicator from component cart-indicator.tsx
 -open route: http://localhost:3000/product/[slug] and click Add to cart button
+
+89. Understanding data cache and revalidation
+-open link: https://nextjs.org/docs/app/api-reference/functions/unstable_cache
