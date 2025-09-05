@@ -628,3 +628,7 @@ Section 11: The cart page
 -in component cart-entry.tsx add logic for displaying cart info
 -in component cart/page.tsx import component CartEntry from component cart-entry.tsx
 -open route: http://localhost:3000/cart
+
+94. CartEntry: UI fixes
+-in component cart-entry.tsx fix Tailwind CSS classes
+-open route: http://localhost:3000/cart

@@ -10,9 +10,9 @@ interface CartEntryProps {
 
 const CartEntry = ({ cartItem }: CartEntryProps) => {
   return (
-    <li className='border-b border-muted flex py-4 justify-between'>
+    <li className='border-b border-muted flex p-4 justify-between'>
       <div className='flex space-x-4'>
-        <div className='overflow-hidden rounded-md border border-muted w-24 h-24'>
+        <div className='overflow-hidden rounded-md border border-muted w-16 h-16'>
           <Image
             className='h-full w-full object-cover'
             width={128}
@@ -25,19 +25,19 @@ const CartEntry = ({ cartItem }: CartEntryProps) => {
         </div>
 
         <div className='flex flex-col'>
-          <div className='text-lg font-medium'>
+          <div className='font-medium'>
             {cartItem.product.name}
           </div>
         </div>
       </div>
 
-      <div className='flex flex-col justify-between'>
+      <div className='flex flex-col justify-between items-end gap-2'>
         <p className='font-medium'>
           {formatPrice(cartItem.product.price)}
         </p>
 
         <div className='flex items-center border border-muted rounded-full'>
-          <Button variant='ghost' className='cursor-pointer'>
+          <Button variant='ghost' className='rounded-l-full cursor-p'>
             <Minus className='h-4 w-4' />
           </Button>
 
@@ -45,7 +45,7 @@ const CartEntry = ({ cartItem }: CartEntryProps) => {
             {cartItem.quantity}
           </p>
 
-          <Button variant='ghost' className='cursor-pointer'>
+          <Button variant='ghost' className='rounded-r-full cursor-pointer'>
             <Plus className='h-4 w-4' />
           </Button>
         </div>
