@@ -593,3 +593,10 @@ Section 10: Cart feature
 
 89. Understanding data cache and revalidation
 -open link: https://nextjs.org/docs/app/api-reference/functions/unstable_cache
+
+90. Cart counter not updating? Revalidate tags
+-open link: https://nextjs.org/docs/app/api-reference/functions/revalidateTag
+-in actions.ts file invoke function unstable_cache and revalidateTag from package next/cache
+-in function findCartFromCookie() invoke function return unstable_cache
+-in function addToCart() invoke function revalidateTag()
+-open route: http://localhost:3000/product/[slug] and click Add to cart button

@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidateTag, unstable_cache, } from 'next/cache';
 import { cookies } from 'next/headers';
 import { prisma } from '@/lib/prisma';
 import type { Prisma } from '@/app/generated/prisma';
@@ -74,18 +75,22 @@ async function findCartFromCookie(): Promise<CartWithProducts | null> {
     return null;
   };
 
-  const cart = await prisma.cart.findUnique({
-    where: { id: cartId },
-    include: {
-      items: {
+  return unstable_cache(
+    async (id: string) => {
+      return await prisma.cart.findUnique({
+        where: { id },
         include: {
-          product: true,
+          items: {
+            include: {
+              product: true,
+            },
+          },
         },
-      },
+      });
     },
-  });
-
-  return cart;
+    [`cart-${cartId}`],
+    { tags: [`cart-${cartId}`] }
+  )(cartId);
 };
 
 export async function getCart(): Promise<ShoppingCart | null> {
@@ -153,4 +158,6 @@ export async function addToCart(
       },
     });
   };
+
+  revalidateTag(`cart-${cart.id}`);
 };
