@@ -716,3 +716,8 @@ Section 12: Order management and Stripe integration for checkout
 108. Implementing checkout process
 -in orders.ts file import function createCheckoutSession from stripe.ts file
 -in function processCheckout() add logic for processing the order
+
+109. Handling checkout errors
+-in orders.ts file create variable let orderId
+-in block try redeclare variable orderId
+-in block catch add condition if
