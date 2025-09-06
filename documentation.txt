@@ -699,3 +699,8 @@ Section 12: Order management and Stripe integration for checkout
 -in orders.ts file create function cookies and object prisma
 -in function createOrder() add blocks try - catch
 -in function createOrder() add logic for creating an order
+
+105. Stripe checkout session - getting started
+-in stripe.ts file import type Prisma
+-create and export type OrderWithItemsAndProduct
+-create and export async function createCheckoutSession()
