@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { getCart } from './actions';
 import { prisma } from './prisma';
 
-export async function createOrder() {
+export async function processCheckout() {
   const cart = await getCart();
 
   if (!cart || cart.items.length === 0) {
@@ -47,19 +47,18 @@ export async function createOrder() {
       return newOrder;
     });
 
+    // 1. Reload full order
+    // 2. Confirm the order was loaded
+    // 3. Create the Stripe session
+    // 4. Return the session URL and handle the errors
+    // 5. Store the session ID in the order & change the order status
+
     (await cookies()).delete('cartId');
 
     return order;
   } catch (error) {
+    // 1. OPTIONAL: change the order status to failed
     console.error('Error creating order:', error);
     throw new Error('Failed to create order');
   };
-
-  // TODO:
-  // 1. Calculate total price
-  // 2. Create Order record
-  // 3. Create OrderItem records
-  // 4. Clear cart
-  // 5. Revalidate cache
-  // 6. Return the order
 };

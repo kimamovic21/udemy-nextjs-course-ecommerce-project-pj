@@ -708,3 +708,7 @@ Section 12: Order management and Stripe integration for checkout
 106. Implementing createCheckoutSession
 -in .env file create variable NEXT_PUBLIC_URL
 -in stripe.ts file, add logic in function createCheckoutSession()
+
+107. Moving to complete checkout process
+-in orders.ts file rename function createOrder to processCheckout()
+-in function processCheckout() add TODO list
