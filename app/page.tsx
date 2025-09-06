@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { prisma } from '@/lib/prisma';
+import { stripe } from '@/lib/stripe';
 import {
   Pagination,
   PaginationContent,
@@ -22,6 +23,8 @@ const HomePage = async (props: { searchParams: SearchParams }) => {
 
   const totalProducts = await prisma.product.count();
   const totalPages = Math.ceil(totalProducts / productsPerPage);
+
+  console.log(await stripe.events.list({ limit: 1 }));
 
   return (
     <main className='container mx-auto p-4'>

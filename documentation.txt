@@ -673,3 +673,13 @@ Section 12: Order management and Stripe integration for checkout
 -add to model Product field orderItems
 -type command: npx prisma migrate dev --name add_order_models
 -type command: npx prisma studio
+
+102. Configuring Stripe
+-open link: https://stripe.com
+-open link: https://dashboard.stripe.com/test/dashboard
+-open link: https://www.npmjs.com/package/stripe
+-type command: npm i stripe
+-in .env file create variables STRIPE_SECRET_KEY and NEXT_STRIPE_PUBLISHABLE_KEY
+-in folder lib stripe.ts file and add logic to connect Stripe service with your Next app
+-in component app/page.tsx import object stripe from stripe.ts file
+-open route: http://localhost:3000
