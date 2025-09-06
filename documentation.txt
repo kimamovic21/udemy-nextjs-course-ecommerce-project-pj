@@ -704,3 +704,7 @@ Section 12: Order management and Stripe integration for checkout
 -in stripe.ts file import type Prisma
 -create and export type OrderWithItemsAndProduct
 -create and export async function createCheckoutSession()
+
+106. Implementing createCheckoutSession
+-in .env file create variable NEXT_PUBLIC_URL
+-in stripe.ts file, add logic in function createCheckoutSession()
