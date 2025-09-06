@@ -3,6 +3,7 @@
 import { cookies } from 'next/headers';
 import { getCart } from './actions';
 import { prisma } from './prisma';
+import { createCheckoutSession } from './stripe';
 
 export async function processCheckout() {
   const cart = await getCart();
@@ -48,10 +49,42 @@ export async function processCheckout() {
     });
 
     // 1. Reload full order
+    const fullOrder = await prisma.order.findUnique({
+      where: {
+        id: order.id,
+      },
+      include: {
+        items: {
+          include: {
+            product: true,
+          },
+        },
+      },
+    });
+
     // 2. Confirm the order was loaded
+    if (!fullOrder) {
+      throw new Error('Order not found');
+    };
+
     // 3. Create the Stripe session
+    const { sessionId, sessionUrl } = await createCheckoutSession(fullOrder);
+
     // 4. Return the session URL and handle the errors
+    if (!sessionId || !sessionUrl) {
+      throw new Error('Failed to create Stripe session');
+    };
+
     // 5. Store the session ID in the order & change the order status
+    await prisma.order.update({
+      where: {
+        id: fullOrder.id,
+      },
+      data: {
+        stripeSessionId: sessionId,
+        status: 'pending',
+      },
+    });
 
     (await cookies()).delete('cartId');
 

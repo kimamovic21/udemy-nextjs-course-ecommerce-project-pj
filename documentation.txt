@@ -712,3 +712,7 @@ Section 12: Order management and Stripe integration for checkout
 107. Moving to complete checkout process
 -in orders.ts file rename function createOrder to processCheckout()
 -in function processCheckout() add TODO list
+
+108. Implementing checkout process
+-in orders.ts file import function createCheckoutSession from stripe.ts file
+-in function processCheckout() add logic for processing the order
