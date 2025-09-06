@@ -683,3 +683,12 @@ Section 12: Order management and Stripe integration for checkout
 -in folder lib stripe.ts file and add logic to connect Stripe service with your Next app
 -in component app/page.tsx import object stripe from stripe.ts file
 -open route: http://localhost:3000
+
+103. Why we need an order first
+-in folder lib create orders.ts file
+-in orders.ts file add directive 'use server'
+-create and export async function createOrder()
+-create variable const cart
+-add condition if cart does not exist or if cart is empty
+-import function getCart from actions.ts file
+-add TODO list
