@@ -677,6 +677,8 @@ Section 12: Order management and Stripe integration for checkout
 102. Configuring Stripe
 -open link: https://stripe.com
 -open link: https://dashboard.stripe.com/test/dashboard
+-open link: https://dashboard.stripe.com/test/developers
+-open link: https://dashboard.stripe.com/test/apikeys
 -open link: https://www.npmjs.com/package/stripe
 -type command: npm i stripe
 -in .env file create variables STRIPE_SECRET_KEY and NEXT_STRIPE_PUBLISHABLE_KEY
@@ -692,3 +694,8 @@ Section 12: Order management and Stripe integration for checkout
 -add condition if cart does not exist or if cart is empty
 -import function getCart from actions.ts file
 -add TODO list
+
+104. Server action createOrder - transaction logic
+-in orders.ts file create function cookies and object prisma
+-in function createOrder() add blocks try - catch
+-in function createOrder() add logic for creating an order
