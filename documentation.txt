@@ -771,3 +771,6 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 -in folder [orderId] create components order-item.tsx and order-summary.tsx
 -in component [orderId]/page.tsx import components OrderItem and OrderSummary
 -open route: http://localhost:3000/order/[orderId]
+
+117. What is a Stripe webhook ?
+-open link: https://docs.stripe.com/webhooks
