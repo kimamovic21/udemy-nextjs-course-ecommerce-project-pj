@@ -757,3 +757,7 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 -in cancel/route.ts file create and export async function GET()
 -in function GET() add logic to verify Stripe session and update order status
 -in stripe.ts file updates variables const successUrl and const cancelUrl
+
+114. Payment success route handler
+-in success/route.ts file create and export async function GET()
+-in function GET() add logic to process Stripe session and mark order as paid
