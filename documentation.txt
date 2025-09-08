@@ -739,3 +739,10 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 -open link: https://nextjs.org/docs/app/api-reference/functions/redirect
 -import function redirect from package next/navigation
 -open route: http://localhost:3000/cart and click button Proceed to Checkout
+
+111. Making a test payment using Stripe
+-open link: https://docs.stripe.com/testing
+-open link: https://checkout.stripe.com/c/pay/[paymentId]
+-enter random data and card number from testing documentation
+-click button Pay
+-open route: http://localhost:3000/order/success?session_id=[sessionId]
