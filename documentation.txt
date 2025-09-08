@@ -749,3 +749,11 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 
 112. Order state & Stripe redirects explained
 -in order.ts file update field status to pending_payment
+
+113. Payment cancelled route handler
+-open link: https://nextjs.org/docs/app/getting-started/route-handlers-and-middleware
+-in folder app create folder checkout
+-in folder checkout create folders cancel and success with route.ts files
+-in cancel/route.ts file create and export async function GET()
+-in function GET() add logic to verify Stripe session and update order status
+-in stripe.ts file updates variables const successUrl and const cancelUrl
