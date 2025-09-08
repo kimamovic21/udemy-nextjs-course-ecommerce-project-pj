@@ -1,9 +1,28 @@
+import { redirect } from 'next/navigation';
 import { getCart } from '@/lib/actions';
-import CartEntry from '@/components/shared/cart-entry';
+import { processCheckout } from '@/lib/orders';
+import { type ProcessCheckoutResponse } from '@/lib/types';
+import { Button } from '@/components/ui/button';
 import CartSummary from '@/components/shared/cart-summary';
+import CartEntry from '@/components/shared/cart-entry';
 
 const CartPage = async () => {
   const cart = await getCart();
+
+  const handleCheckout = async () => {
+    'use server';
+    let result: ProcessCheckoutResponse | null = null;
+
+    try {
+      result = await processCheckout();
+    } catch (error) {
+      console.error('Checkout error:', error);
+    };
+
+    if (result) {
+      redirect(result.sessionUrl);
+    };
+  };
 
   return (
     <main className='container mx-auto p-4'>
@@ -19,13 +38,19 @@ const CartPage = async () => {
         </div>
       ) : (
         <>
-          <div className="flex flex-col">
+          <div className='flex flex-col'>
             {cart.items.map((item) => (
               <CartEntry key={item.id} cartItem={item} />
             ))}
           </div>
 
           <CartSummary />
+
+          <form action={handleCheckout}>
+            <Button size='lg' className='mt-4 w-full cursor-pointer'>
+              Proceed to Checkout
+            </Button>
+          </form>
         </>
       )}
     </main>

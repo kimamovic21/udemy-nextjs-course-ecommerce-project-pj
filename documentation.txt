@@ -721,3 +721,21 @@ Section 12: Order management and Stripe integration for checkout
 -in orders.ts file create variable let orderId
 -in block try redeclare variable orderId
 -in block catch add condition if
+
+
+
+Section 13: Finalizing checkout, handling payments and Stripe webhooks
+
+
+110. Making the checkout form
+-in component cart/page.tsx, in jsx create form element
+-add to form element attribute action
+-create async function handleCheckout()
+-import function processCheckout from orders.ts file
+-in orders.ts file import type OrderWithItemsAndProduct from stripe.ts file
+-in object return add variables sessionUrl and order
+-in types.ts file create and export type ProcessCheckoutResponse
+-in cart/page.tsx import type ProcessCheckoutResponse from types.ts file
+-open link: https://nextjs.org/docs/app/api-reference/functions/redirect
+-import function redirect from package next/navigation
+-open route: http://localhost:3000/cart and click button Proceed to Checkout
