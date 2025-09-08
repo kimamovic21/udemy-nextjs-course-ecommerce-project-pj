@@ -761,3 +761,8 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 114. Payment success route handler
 -in success/route.ts file create and export async function GET()
 -in function GET() add logic to process Stripe session and mark order as paid
+
+115. Order status page
+-in folder app create folders order, [orderId] and component page.tsx
+-in component [orderId]/page.tsx add logic for displaying basic order information
+-open route: http://localhost:3000/order/[orderId]
