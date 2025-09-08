@@ -766,3 +766,8 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 -in folder app create folders order, [orderId] and component page.tsx
 -in component [orderId]/page.tsx add logic for displaying basic order information
 -open route: http://localhost:3000/order/[orderId]
+
+116. Improving order page UI
+-in folder [orderId] create components order-item.tsx and order-summary.tsx
+-in component [orderId]/page.tsx import components OrderItem and OrderSummary
+-open route: http://localhost:3000/order/[orderId]

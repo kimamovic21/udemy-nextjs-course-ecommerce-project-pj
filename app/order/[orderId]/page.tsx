@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
+import OrderItem from './order-item';
+import OrderSummary from './order-summary';
 
 interface OrderPageProps {
   params: Promise<{
@@ -28,19 +30,15 @@ const OrderPage = async ({ params }: OrderPageProps) => {
   };
 
   return (
-    <div>
-      <h1>Order Details</h1>
-      <p>Order ID: {order.id}</p>
-      <p>Status: {order.status}</p>
-      <h2>Items</h2>
+    <main className='container mx-auto p-4'>
       <ul>
         {order.items.map((item) => (
-          <li key={item.id}>
-            {item.product.name} - Quantity: {item.quantity}
-          </li>
+          <OrderItem key={item.id} orderItem={item} />
         ))}
       </ul>
-    </div>
+
+      <OrderSummary order={order} />
+    </main>
   );
 };
 
