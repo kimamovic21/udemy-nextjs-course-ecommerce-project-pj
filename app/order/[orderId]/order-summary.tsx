@@ -34,6 +34,12 @@ const OrderSummary = ({ order }: OrderSummaryProps) => {
           variant: 'destructive' as const,
           icon: <AlertCircle className='w-4 h-4' />,
         };
+      case 'payment_processed':
+        return {
+          label: 'Payment Processed',
+          variant: 'outline' as const,
+          icon: <CreditCard className='w-4 h-4' />,
+        };
       default:
         return {
           label: status,

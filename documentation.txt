@@ -784,3 +784,15 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 119. Installing and running Stripe CLI
 -open link: https://docs.stripe.com/stripe-cli
 -open link: https://www.youtube.com/watch?v=LUHeCvVFATU and follow instructions
+
+120. Testing the Stripe webhook with Stripe CLI
+-type command: stripe login
+-type command: stripe listen --forward-to localhost:3000/webhooks/stripe
+-in .env file create variable STRIPE_WEBHOOK_SECRET
+-in cancel/route.ts file create variable let orderId
+-in block try redeclare variable orderId
+-add statement return orderId ? redirect()
+-repeat the same process with success/route.ts file
+-in component order-summary.tsx add case payment_processed
+-open Prisma studio and delete existing orders
+-create and pay new order
