@@ -780,3 +780,7 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 -open link: https://dashboard.stripe.com/test/webhooks/create
 -create folders webhooks, stripe and route.ts file
 -in route.ts file create and export async function POST()
+
+119. Installing and running Stripe CLI
+-open link: https://docs.stripe.com/stripe-cli
+-open link: https://www.youtube.com/watch?v=LUHeCvVFATU and follow instructions
