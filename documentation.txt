@@ -746,3 +746,6 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 -enter random data and card number from testing documentation
 -click button Pay
 -open route: http://localhost:3000/order/success?session_id=[sessionId]
+
+112. Order state & Stripe redirects explained
+-in order.ts file update field status to pending_payment
