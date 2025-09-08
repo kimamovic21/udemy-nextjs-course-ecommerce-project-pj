@@ -774,3 +774,9 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 
 117. What is a Stripe webhook ?
 -open link: https://docs.stripe.com/webhooks
+
+118. Implementing Stripe webhook route handler
+-open link: https://dashboard.stripe.com/test/webhooks
+-open link: https://dashboard.stripe.com/test/webhooks/create
+-create folders webhooks, stripe and route.ts file
+-in route.ts file create and export async function POST()
