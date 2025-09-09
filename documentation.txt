@@ -829,3 +829,10 @@ Section 14: User authentication with Auth.js and Next.js
 -type command: npm i --save-dev @types/bcryptjs
 -in auth.ts file import bcrypt object form package bcryptjs
 -create async functions hashPassword() and comparePasswords()
+
+125. Seeding test users
+-in seed.ts file import model User and function hashPassword
+-invoke function await prisma.user.deleteMany()
+-create variable array const users with type User
+-invoke loop for (const user of users)
+-type command: npm run seed
