@@ -796,3 +796,10 @@ Section 13: Finalizing checkout, handling payments and Stripe webhooks
 -in component order-summary.tsx add case payment_processed
 -open Prisma studio and delete existing orders
 -create and pay new order
+
+
+
+Section 14: User authentication with Auth.js and Next.js
+
+
+121. About authentication
