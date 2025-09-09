@@ -846,3 +846,6 @@ Section 14: User authentication with Auth.js and Next.js
 -open link: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons
 -replace favicon icon
 -open route: http://localhost:3000/auth/signin
+
+127. Auth.js pages - login page
+-in auth.ts file add object pages
