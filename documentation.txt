@@ -849,3 +849,12 @@ Section 14: User authentication with Auth.js and Next.js
 
 127. Auth.js pages - login page
 -in auth.ts file add object pages
+
+128. Setting up zod and sign-in schema
+-open link: https://zod.dev
+-open link: https://www.npmjs.com/package/zod
+-type command: npm i zod
+-in folder lib create schemas.ts file
+-in schemas.ts file import object z from package zod
+-create and export variable const LoginSchema
+-export type LoginSchemaType
