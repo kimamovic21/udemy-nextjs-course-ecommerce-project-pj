@@ -877,3 +877,8 @@ Section 14: User authentication with Auth.js and Next.js
 -in component signin/page.tsx, in jsx create form element
 -import form components from component ui/form.tsx
 -open route: http://localhost:3000/auth/signin and click Sign in button
+
+131. Credentials provider logic
+-open link: https://authjs.dev/getting-started/providers/credentials
+-in auth.ts file import component Credentials from package next-auth/providers/credentials
+-in array providers invoke function Credentials()
