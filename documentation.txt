@@ -836,3 +836,13 @@ Section 14: User authentication with Auth.js and Next.js
 -create variable array const users with type User
 -invoke loop for (const user of users)
 -type command: npm run seed
+
+126. Sign in page - UI shell
+-open link: https://ui.shadcn.com/docs/components/label
+-type command: npx shadcn@latest add label
+-in folder app create folders auth, signin and component page.tsx
+-in component signin/page.tsx import shadcn and Link components
+-in jsx add components with Tailwind CSS classes
+-open link: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons
+-replace favicon icon
+-open route: http://localhost:3000/auth/signin
