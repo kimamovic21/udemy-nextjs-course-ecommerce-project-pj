@@ -803,3 +803,8 @@ Section 14: User authentication with Auth.js and Next.js
 
 
 121. About authentication
+
+122. Setting up the user database model
+-type command: npx prisma migrate dev --name add_user_model
+-type command: npx prisma studio
+-open route: http://localhost:5555
