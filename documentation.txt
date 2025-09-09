@@ -882,3 +882,5 @@ Section 14: User authentication with Auth.js and Next.js
 -open link: https://authjs.dev/getting-started/providers/credentials
 -in auth.ts file import component Credentials from package next-auth/providers/credentials
 -in array providers invoke function Credentials()
+
+132. Understanding the why: React hook form vs simple form
