@@ -1,6 +1,7 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginSchema, type LoginSchemaType } from '@/lib/schemas';
 import {
@@ -31,8 +32,14 @@ const SignInPage = () => {
     },
   });
 
-  const onSubmit = (data: LoginSchemaType) => {
+  const onSubmit = async (data: LoginSchemaType) => {
     console.log(data);
+    const result = await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    });
+    console.log(result);
   };
 
   return (
@@ -88,7 +95,7 @@ const SignInPage = () => {
                 )}
               />
 
-              <Button type='submit' className='w-full'>
+              <Button type='submit' className='w-full cursor-pointer'>
                 Sign In
               </Button>
             </form>

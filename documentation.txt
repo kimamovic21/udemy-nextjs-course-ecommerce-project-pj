@@ -884,3 +884,9 @@ Section 14: User authentication with Auth.js and Next.js
 -in array providers invoke function Credentials()
 
 132. Understanding the why: React hook form vs simple form
+
+133. Connecting sign-in form
+-in component signin/page.tsx import function signIn from package next-auth/react
+-in function onSubmit() invoke function sign()
+-the result of function signIn() store in a variable const result
+-open route: http://localhost:3000/auth/signin and click Sign in buttons with wrong and right credentials
