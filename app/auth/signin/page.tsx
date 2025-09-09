@@ -10,9 +10,16 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
 import Link from 'next/link';
 
 const SignInPage = () => {
@@ -48,25 +55,44 @@ const SignInPage = () => {
         </CardHeader>
 
         <CardContent>
-          <form className='space-y-4'>
-            <div className='space-y-2'>
-              <Label htmlFor='email'>
-                Email
-              </Label>
-              <Input type='email' id='email' placeholder='Email' />
-            </div>
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className='space-y-4'
+            >
+              <FormField
+                control={form.control}
+                name='email'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder='Email' {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <div className='space-y-2'>
-              <Label htmlFor='password'>
-                Password
-              </Label>
-              <Input type='password' id='password' placeholder='Password' />
-            </div>
+              <FormField
+                control={form.control}
+                name='password'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Password</FormLabel>
+                    <FormControl>
+                      <Input placeholder='Password' {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <Button type='submit' className='w-full'>
-              Sign In
-            </Button>
-          </form>
+              <Button type='submit' className='w-full'>
+                Sign In
+              </Button>
+            </form>
+          </Form>
         </CardContent>
       </Card>
     </main>

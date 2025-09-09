@@ -872,3 +872,8 @@ Section 14: User authentication with Auth.js and Next.js
 -create variable const form
 -create function onSubmit()
 -open route: http://localhost:3000/auth/signin
+
+130. Mixing shadcn/ui with React hook form
+-in component signin/page.tsx, in jsx create form element
+-import form components from component ui/form.tsx
+-open route: http://localhost:3000/auth/signin and click Sign in button
