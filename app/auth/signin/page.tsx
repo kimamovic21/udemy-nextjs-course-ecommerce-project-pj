@@ -1,3 +1,8 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LoginSchema, type LoginSchemaType } from '@/lib/schemas';
 import {
   Card,
   CardContent,
@@ -11,11 +16,25 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 const SignInPage = () => {
+  const form = useForm<LoginSchemaType>({
+    resolver: zodResolver(LoginSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
+
+  const onSubmit = (data: LoginSchemaType) => {
+    console.log(data);
+  };
+
   return (
     <main className='flex min-h-screen flex-col items-center justify-center p-4'>
       <Card className='w-full max-w-md'>
         <CardHeader>
-          <CardTitle>Sign In to your account</CardTitle>
+          <CardTitle>
+            Sign In to your account
+          </CardTitle>
 
           <CardDescription>
             Or{' '}

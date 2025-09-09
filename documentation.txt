@@ -858,3 +858,17 @@ Section 14: User authentication with Auth.js and Next.js
 -in schemas.ts file import object z from package zod
 -create and export variable const LoginSchema
 -export type LoginSchemaType
+
+129. Setting up React hook form & sign-in form
+-open link: https://react-hook-form.com
+-type command: npm i react-hook-form
+-open link: https://www.npmjs.com/package/@hookform/resolvers
+-type command: npm i @hookform/resolvers
+-open link: https://ui.shadcn.com/docs/components/form
+-type command: npx shadcn@latest add form
+-in component signin/page.tsx add directive 'use client'
+-import functions useForm and zodResolver
+-import variable LoginSchema and type LoginSchemaType from schemas.ts file
+-create variable const form
+-create function onSubmit()
+-open route: http://localhost:3000/auth/signin
