@@ -808,3 +808,16 @@ Section 14: User authentication with Auth.js and Next.js
 -type command: npx prisma migrate dev --name add_user_model
 -type command: npx prisma studio
 -open route: http://localhost:5555
+
+123. Installing Auth.js and basic setup
+-open link: https://authjs.dev
+-open link: https://authjs.dev/getting-started/installation?framework=Next.js
+-type command: npm install next-auth@beta
+-type command: npx auth secret
+-in .env file create variable AUTH_SECRET
+-in folder lib create auth.ts file
+-in auth.ts file add code from documentation
+-in folder app create folders api, auth, [...nextauth] and route.ts file
+-in route.ts file add code from documentation
+-create middleware.ts file
+-in middleware.ts file add code from documentation
