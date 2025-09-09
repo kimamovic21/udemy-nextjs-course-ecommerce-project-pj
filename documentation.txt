@@ -821,3 +821,11 @@ Section 14: User authentication with Auth.js and Next.js
 -in route.ts file add code from documentation
 -create middleware.ts file
 -in middleware.ts file add code from documentation
+
+124. Hashing passwords
+-open link: https://www.npmjs.com/package/bcryptjs
+-type command: npm i bcryptjs
+-open link: https://www.npmjs.com/package/@types/bcryptjs
+-type command: npm i --save-dev @types/bcryptjs
+-in auth.ts file import bcrypt object form package bcryptjs
+-create async functions hashPassword() and comparePasswords()
