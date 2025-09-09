@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -24,6 +25,8 @@ import {
 import Link from 'next/link';
 
 const SignInPage = () => {
+  const [error, setError] = useState<string | null>(null);
+
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -33,13 +36,25 @@ const SignInPage = () => {
   });
 
   const onSubmit = async (data: LoginSchemaType) => {
-    console.log(data);
-    const result = await signIn('credentials', {
-      email: data.email,
-      password: data.password,
-      redirect: false,
-    });
-    console.log(result);
+    setError(null);
+    try {
+      const result = await signIn('credentials', {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      });
+
+      if (result?.error) {
+        if (result.error === 'CredentialsSignin') {
+          setError('Invalid email or password');
+        } else {
+          setError('An error occurred while signing in');
+        };
+      };
+    } catch (error) {
+      console.error('Sign in error:', error);
+      setError('An error occurred while signing in');
+    };
   };
 
   return (
@@ -62,6 +77,8 @@ const SignInPage = () => {
         </CardHeader>
 
         <CardContent>
+          {error && (<p className='mb-4 text-sm text-destructive'>{error}</p>)}
+
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
