@@ -28,7 +28,7 @@ import Link from 'next/link';
 const SignInPage = () => {
   const [error, setError] = useState<string | null>(null);
 
-  const { data: session, update: updateSession } = useSession();
+  const { update: updateSession } = useSession();
 
   const router = useRouter();
 
@@ -119,8 +119,6 @@ const SignInPage = () => {
                   </FormItem>
                 )}
               />
-
-              {session?.user && (<pre>{JSON.stringify(session, null, 2)}</pre>)}
 
               <Button type='submit' className='w-full cursor-pointer'>
                 Sign In

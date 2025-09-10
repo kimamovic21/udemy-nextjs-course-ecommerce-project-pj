@@ -5,6 +5,7 @@ import MobileNav from './mobile-nav';
 import SearchInput from './search-input';
 import CartIndicator from './cart-indicator';
 import CartIndicatorSkeleton from './cart-indicator-skeleton';
+import AuthStatus from './auth-status';
 
 export const categories = [
   { id: 1, name: 'Electronics', href: '/search/electronics' },
@@ -43,6 +44,8 @@ const Navbar = () => {
         </div>
 
         <div className='flex items-center gap-0'>
+          <AuthStatus />
+
           <Suspense fallback={<CartIndicatorSkeleton />}>
             <CartIndicator />
           </Suspense>

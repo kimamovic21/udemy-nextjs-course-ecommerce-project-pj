@@ -924,3 +924,9 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -open link: https://nextjs.org/docs/app/guides/redirecting
 -in component signin/page.tsx import and invoke function useRouter()
 -open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
+
+138. Auth status UI & logout
+-in folder shared create component auth-status.tsx
+-in component auth-status.tsx add logic for displaying session status and logout button
+-in component navbar.tsx import component AuthStatus from component auth-status.tsx
+-open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
