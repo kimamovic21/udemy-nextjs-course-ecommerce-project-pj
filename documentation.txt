@@ -947,3 +947,6 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 
 141. Fixing user type
 -in auth.ts file fix user type and add in return statement user object
+
+142. Sign up server action
+-in auth.ts file create and export async function registerUser()
