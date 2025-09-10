@@ -950,3 +950,9 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 
 142. Sign up server action
 -in auth.ts file create and export async function registerUser()
+
+143. Connecting sign up form & auto-login
+-in folder lib create folder actions and auth.ts file
+-in auth.ts file create and export async function registerUser()
+-in component signup/page.tsx add logic for registration
+-open route: http://localhost:3000/auth/signup and click Sign Up button

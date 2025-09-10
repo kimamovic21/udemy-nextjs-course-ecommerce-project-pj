@@ -1,8 +1,11 @@
 'use client';
 
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { RegisterSchema, type RegisterSchemaType } from '@/lib/schemas';
+import { registerUser } from '@/lib/actions/auth';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import {
@@ -23,6 +26,10 @@ import {
 import Link from 'next/link';
 
 const SignUpPage = () => {
+  const [error, setError] = useState<string | null>(null);
+
+  const router = useRouter();
+
   const form = useForm<RegisterSchemaType>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
@@ -34,7 +41,23 @@ const SignUpPage = () => {
   });
 
   const onSubmit = async (data: RegisterSchemaType) => {
-    console.log(data);
+    setError(null);
+
+    form.clearErrors();
+
+    try {
+      const result = await registerUser(data);
+
+      if (!result?.success) {
+        setError(result?.error || 'An error occurred while creating your account.');
+        return;
+      };
+
+      router.push('/auth/signin');
+    } catch (e) {
+      console.error('Registration Error:', e);
+      setError('An error occurred while creating your account.');
+    };
   };
 
   return (
@@ -57,6 +80,8 @@ const SignUpPage = () => {
         </CardHeader>
 
         <CardContent>
+          {error && (<p className='mb-4 text-sm text-destructive'>{error}</p>)}
+
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
               <FormField
@@ -123,7 +148,11 @@ const SignUpPage = () => {
                 )}
               />
 
-              <Button type='submit' className='w-full cursor-pointer'>
+              <Button
+                type='submit'
+                className='w-full cursor-pointer'
+                disabled={form.formState.isSubmitting}
+              >
                 Sign Up
               </Button>
             </form>

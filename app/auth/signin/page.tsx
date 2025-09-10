@@ -120,7 +120,11 @@ const SignInPage = () => {
                 )}
               />
 
-              <Button type='submit' className='w-full cursor-pointer'>
+              <Button 
+                type='submit' 
+                className='w-full cursor-pointer'
+                disabled={form.formState.isSubmitting}
+              >
                 Sign In
               </Button>
             </form>
