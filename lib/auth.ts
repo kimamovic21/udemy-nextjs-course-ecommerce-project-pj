@@ -71,7 +71,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return null;
           };
 
-          return user;
+          return {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+          };
         } catch (error) {
           console.error('Error finding user:', error);
           return null;

@@ -944,3 +944,6 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -in component signup/page.tsx import card and form components from folder ui
 -in jsx add components with Tailwind CSS classes
 -open route: http://localhost:3000/auth/signup
+
+141. Fixing user type
+-in auth.ts file fix user type and add in return statement user object
