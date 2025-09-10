@@ -1,32 +1,62 @@
 'use client';
 
 import { signOut, useSession } from 'next-auth/react';
-import { LogIn, LogOut } from 'lucide-react';
+import { LogIn, User } from 'lucide-react';
 import { Skeleton } from '../ui/skeleton';
 import { Button } from '../ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
 
 const AuthStatus = () => {
-  const { status: sessionStatus } = useSession();
+  const {
+    status: sessionStatus,
+    data: sessionData
+  } = useSession();
 
   if (sessionStatus === 'loading') {
-    return <Skeleton className='w-9 h-9' />;
+    return (<Skeleton className='w-9 h-9 animate-pulse' />);
   };
 
   if (sessionStatus === 'unauthenticated') {
     return (
       <Button variant='ghost' size='icon' asChild>
         <Link href='/auth/signin'>
-          <LogIn className='h-5 w-5' />
+          <LogIn className='h-5 w-5 cursor-pointer' />
         </Link>
       </Button>
     );
   };
 
   return (
-    <Button variant='ghost' size='icon' onClick={() => signOut()}>
-      <LogOut className='h-5 w-5' />
-    </Button>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild className='cursor-pointer'>
+        <Button variant='ghost' size='icon'>
+          <User className='h-5 w-5' />
+        </Button>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent>
+        <DropdownMenuLabel>
+          {sessionData?.user?.name}
+        </DropdownMenuLabel>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuItem
+          onClick={() => signOut()}
+          className='cursor-pointer'
+        >
+          Sign out
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 

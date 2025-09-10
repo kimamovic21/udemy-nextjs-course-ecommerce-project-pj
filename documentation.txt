@@ -930,3 +930,10 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -in component auth-status.tsx add logic for displaying session status and logout button
 -in component navbar.tsx import component AuthStatus from component auth-status.tsx
 -open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
+
+139. User dropdown menu
+-open link: https://ui.shadcn.com/docs/components/dropdown-menu
+-type command: npx shadcn@latest add dropdown-menu
+-in component auth-status import dropdown components from component dropdown-menu.tsx
+-add logic for displaying dropdown menu
+-open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
