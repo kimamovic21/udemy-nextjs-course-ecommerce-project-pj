@@ -1,7 +1,7 @@
 import { JWT } from 'next-auth/jwt';
 import { prisma } from '@/lib/prisma';
 import { LoginSchema } from './schemas';
-import { User, Session } from 'next-auth';
+import { type User, type Session } from 'next-auth';
 import bcrypt from 'bcryptjs';
 import Credentials from 'next-auth/providers/credentials';
 import NextAuth from 'next-auth';

@@ -913,8 +913,14 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 
 136. Session/JWT callbacks & augmenting TS types
 -open link: https://authjs.dev/getting-started/typescript#module-augmentation
+-in auth.ts file import function JWT, types User and Session
 -in object callbacks invoke async functions jwt() and session()
 -add two modules
 -in component signin/page.tsx destructure function update from function useSession()
 -in block try add if-else condition
+-open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
+
+137. Sign-in and redirect
+-open link: https://nextjs.org/docs/app/guides/redirecting
+-in component signin/page.tsx import and invoke function useRouter()
 -open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials

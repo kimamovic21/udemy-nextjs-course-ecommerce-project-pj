@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { signIn, useSession } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -29,6 +30,8 @@ const SignInPage = () => {
 
   const { data: session, update: updateSession } = useSession();
 
+  const router = useRouter();
+
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -54,6 +57,7 @@ const SignInPage = () => {
         };
       } else {
         await updateSession();
+        router.push('/');
       };
     } catch (error) {
       console.error('Sign in error:', error);
