@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/theme/theme-provider';
 import './globals.css';
 import Navbar from '@/components/shared/navbar';
 import Footer from '@/components/shared/footer';
+import { SessionProvider } from 'next-auth/react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,24 +31,26 @@ const RootLayout = ({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className='flex flex-col min-h-screen'>
-            <header>
-              <Navbar />
-            </header>
+        <SessionProvider>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className='flex flex-col min-h-screen'>
+              <header>
+                <Navbar />
+              </header>
 
-            <main className='flex-grow'>
-              {children}
-            </main>
+              <main className='flex-grow'>
+                {children}
+              </main>
 
-            <Footer />
-          </div>
-        </ThemeProvider>
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </SessionProvider>
       </body>
     </html>
   );

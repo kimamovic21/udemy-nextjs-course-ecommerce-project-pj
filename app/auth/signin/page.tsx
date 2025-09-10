@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginSchema, type LoginSchemaType } from '@/lib/schemas';
 import {
@@ -26,6 +26,8 @@ import Link from 'next/link';
 
 const SignInPage = () => {
   const [error, setError] = useState<string | null>(null);
+
+  const { data: session } = useSession();
 
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(LoginSchema),
@@ -111,6 +113,8 @@ const SignInPage = () => {
                   </FormItem>
                 )}
               />
+
+              {session?.user && (<pre>{JSON.stringify(session, null, 2)}</pre>)}
 
               <Button type='submit' className='w-full cursor-pointer'>
                 Sign In

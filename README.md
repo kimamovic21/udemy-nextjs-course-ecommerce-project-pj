@@ -4,6 +4,8 @@
 
 ### Original GitHub Repo: [https://github.com/piotr-jura-udemy/next-ecommerce]
 
+### Udemy Course Link: [https://www.udemy.com/course/master-nextjs-15-the-missing-guide]
+
 ### Getting Started
 
 First, run the development server:

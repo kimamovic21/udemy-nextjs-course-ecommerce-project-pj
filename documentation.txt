@@ -889,7 +889,7 @@ Section 14: User authentication with Auth.js and Next.js
 -in component signin/page.tsx import function signIn from package next-auth/react
 -in function onSubmit() invoke function sign()
 -the result of function signIn() store in a variable const result
--open route: http://localhost:3000/auth/signin and click Sign in buttons with wrong and right credentials
+-open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
 
 
 
@@ -901,4 +901,12 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -create state variable const error and set function setError
 -in function onSubmit() add blocks try - catch
 -in jsx add conditional rendering for variable error && ()
--open route: http://localhost:3000/auth/signin and click Sign in buttons with wrong and right credentials
+-open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
+
+135. Current session, cookies & JWT explained
+-open link: https://nextjs.org/docs/app/guides/authentication
+-in component layout.tsx import component SessionProvider form package 
+-in component signin/page.tsx import and invoke function useSession() from package next-auth/react
+-the value of function useSession() store in a destructured variable const { data: session }
+-in jsx add conditional rendering for variable session?.user && ()
+-open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
