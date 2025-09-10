@@ -937,3 +937,10 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -in component auth-status import dropdown components from component dropdown-menu.tsx
 -add logic for displaying dropdown menu
 -open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
+
+140. Sign-up page - UI & validation
+-in schemas.ts file create and export variable const RegisterSchema and type RegisterSchemaType
+-in folder auth create folder signup and component page.tsx
+-in component signup/page.tsx import card and form components from folder ui
+-in jsx add components with Tailwind CSS classes
+-open route: http://localhost:3000/auth/signup
