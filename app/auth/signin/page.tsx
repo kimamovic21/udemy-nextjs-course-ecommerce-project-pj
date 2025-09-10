@@ -27,7 +27,7 @@ import Link from 'next/link';
 const SignInPage = () => {
   const [error, setError] = useState<string | null>(null);
 
-  const { data: session } = useSession();
+  const { data: session, update: updateSession } = useSession();
 
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(LoginSchema),
@@ -52,6 +52,8 @@ const SignInPage = () => {
         } else {
           setError('An error occurred while signing in');
         };
+      } else {
+        await updateSession();
       };
     } catch (error) {
       console.error('Sign in error:', error);

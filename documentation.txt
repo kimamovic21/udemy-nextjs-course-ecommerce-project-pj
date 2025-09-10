@@ -910,3 +910,11 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -the value of function useSession() store in a destructured variable const { data: session }
 -in jsx add conditional rendering for variable session?.user && ()
 -open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
+
+136. Session/JWT callbacks & augmenting TS types
+-open link: https://authjs.dev/getting-started/typescript#module-augmentation
+-in object callbacks invoke async functions jwt() and session()
+-add two modules
+-in component signin/page.tsx destructure function update from function useSession()
+-in block try add if-else condition
+-open route: http://localhost:3000/auth/signin and click Sign In button with wrong and right credentials
