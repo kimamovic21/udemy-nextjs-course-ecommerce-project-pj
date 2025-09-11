@@ -1009,3 +1009,8 @@ Section 16: Production build, metadata and SEO, error handling
 -in components cart-entry.tsx and order-item.tsx add conditional rendering for orderItem.product.image && ()
 -in eslint.config.mjs file add array files and object rules
 -type command: npm run start
+
+149. Adding metadata for CEO
+-in component app/layout.tsx import object metadata
+-in component search/[slug]/page.tsx create and export async function generateMetadata
+-open route: http://localhost:3000
