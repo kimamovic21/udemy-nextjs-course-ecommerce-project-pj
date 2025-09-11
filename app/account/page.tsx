@@ -72,6 +72,16 @@ const AccountOrdersPage = async () => {
                   View order details
                 </Link>
               </TableCell>
+              <TableCell>
+                {order.status === 'pending_payment' && order.stripeSessionId && (
+                  <Link
+                    href={`/api/orders/${order.id}/continue`}
+                    className='text-blue-600 underline'
+                  >
+                    Continue Payment
+                  </Link>
+                )}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

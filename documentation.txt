@@ -988,3 +988,8 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -in component [orderId]/page.tsx import function auth and component Breadcrumbs
 -open route: http://localhost:3000/account
 -open route: http://localhost:3000/order/[orderId]
+
+Allow resuming checkout with saved sessionId
+-in folder api create folders [orderId], continue and route.ts file
+-in route.ts file create and export async function GET() for fetching order by session id
+-in component account/page.tsx, in jsx add conditional rendering for status pending_payment
