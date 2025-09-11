@@ -1027,3 +1027,8 @@ Section 16: Production build, metadata and SEO, error handling
 -in folder app create sitemap.ts file
 -in sitemap.ts file create and export async function sitemap()
 -open route: http://localhost:3000
+
+152. Adding robots.txt
+-open link: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
+-in folder app create robots.ts file
+-in robots.ts file create and export function robots()
