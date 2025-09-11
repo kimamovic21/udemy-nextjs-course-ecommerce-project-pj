@@ -1039,3 +1039,7 @@ Section 16: Production build, metadata and SEO, error handling
 -in component error.tsx create and export function Error()
 -open Docker and stop project container
 -open route: http://localhost:3000/product/[slug]
+
+154. Cleanup: Removing logs and making dynamic page fast
+-in auth.ts file, in function NextAuth() add field trustHost
+-in prisma.ts file add log for error
