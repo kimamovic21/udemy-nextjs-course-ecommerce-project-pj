@@ -15,14 +15,14 @@ const OrderItem = ({ orderItem }: OrderItemProps) => {
     <li className='border-b border-muted flex py-4 justify-between'>
       <div className='flex space-x-4'>
         <div className='overflow-hidden rounded-md border border-muted w-16 h-16'>
-          <Image
+          {orderItem.product.image && (<Image
             className='h-full w-full object-cover'
             width={128}
             height={128}
             src={orderItem.product.image ?? ''}
             alt={orderItem.product.name}
             priority={true}
-          />
+          />)}
         </div>
 
         <div className='flex flex-col'>

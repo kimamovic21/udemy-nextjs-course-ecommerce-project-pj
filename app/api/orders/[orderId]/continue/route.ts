@@ -1,15 +1,15 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import Stripe from 'stripe';
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+import { stripe } from '@/lib/stripe';
 
 export async function GET(
-  req: Request,
-  { params }: { params: { orderId: string } }
+  request: NextRequest,
+  context: { params: Promise<{ orderId: string }> }
 ) {
+  const { orderId } = await context.params;
+
   const order = await prisma.order.findUnique({
-    where: { id: params.orderId },
+    where: { id: orderId },
   });
 
   if (!order || !order.stripeSessionId) {

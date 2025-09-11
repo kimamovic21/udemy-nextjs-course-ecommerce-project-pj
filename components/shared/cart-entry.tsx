@@ -42,7 +42,7 @@ const CartEntry = ({ cartItem }: CartEntryProps) => {
         </div>
 
         <div className='overflow-hidden rounded-md border border-muted w-16 h-16'>
-          <Image
+          {cartItem.product.image && (<Image
             className='h-full w-full object-cover'
             width={128}
             height={128}
@@ -50,7 +50,7 @@ const CartEntry = ({ cartItem }: CartEntryProps) => {
             alt={cartItem?.product?.name}
             unoptimized={true}
             priority={true}
-          />
+          />)}
         </div>
 
         <div className='flex flex-col'>

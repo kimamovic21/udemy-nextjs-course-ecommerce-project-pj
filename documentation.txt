@@ -995,3 +995,17 @@ Allow resuming checkout with saved sessionId
 -in component account/page.tsx, in jsx add conditional rendering for status pending_payment
 
 147. Improving order & my orders page
+
+
+
+Section 16: Production build, metadata and SEO, error handling
+
+
+148. Production build & fixing issues
+-open link: https://nextjs.org/docs/app/guides/production-checklist
+-type command: npm run build
+-in route.ts file destructure variable const { orderId } from await context.params
+-in component layout.tsx import component Suspense
+-in components cart-entry.tsx and order-item.tsx add conditional rendering for orderItem.product.image && ()
+-in eslint.config.mjs file add array files and object rules
+-type command: npm run start

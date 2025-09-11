@@ -64,23 +64,21 @@ const AccountOrdersPage = async () => {
               <TableCell>{order.id.slice(0, 8)}...</TableCell>
               <TableCell>{order.createdAt.toLocaleDateString()}</TableCell>
               <TableCell>{formatPrice(order.total)}</TableCell>
-              <TableCell>
+              <TableCell className='flex items-center gap-2'>
                 <OrderStatusBadge status={order.status} />
+                {order.status === 'pending_payment' && order.stripeSessionId && (
+                  <Link
+                    href={`/api/orders/${order.id}/continue`}
+                    className='underline'
+                  >
+                    Continue Payment
+                  </Link>
+                )}
               </TableCell>
               <TableCell>
                 <Link className='underline' href={`/order/${order.id}`}>
                   View order details
                 </Link>
-              </TableCell>
-              <TableCell>
-                {order.status === 'pending_payment' && order.stripeSessionId && (
-                  <Link
-                    href={`/api/orders/${order.id}/continue`}
-                    className='text-blue-600 underline'
-                  >
-                    Continue Payment
-                  </Link>
-                )}
               </TableCell>
             </TableRow>
           ))}
