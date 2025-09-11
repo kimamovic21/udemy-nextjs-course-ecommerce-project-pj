@@ -974,3 +974,17 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -open route:https://checkout.stripe.com/c/pay/[paymentId], add your info and click Pay button
 -open route: http://localhost:3000/order/[orderId]
 -open Prisma studio and check model Orders
+-open link: https://dashboard.stripe.com/test/payments
+
+146. Authorization: displaying user orders
+-open link: https://ui.shadcn.com/docs/components/table
+-type command: npx shadcn@latest add table
+-in folder app create folder account and component page.tsx
+-in component auth-status.tsx, in jsx add Link and two dropdown components 
+-in folder shared create component order-status.badge.tsx
+-in component account/page.tsx import component OrderStatusBadge from component order-status.badge.tsx
+-in component account/page.tsx add logic for displaying orders for signed in user
+-in component order-summary.tsx import component OrderStatusBadge from component order-status.badge.tsx
+-in component [orderId]/page.tsx import function auth and component Breadcrumbs
+-open route: http://localhost:3000/account
+-open route: http://localhost:3000/order/[orderId]

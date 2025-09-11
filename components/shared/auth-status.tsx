@@ -49,6 +49,14 @@ const AuthStatus = () => {
 
         <DropdownMenuSeparator />
 
+        <DropdownMenuItem asChild>
+          <Link href='/account' className='cursor-pointer'>
+            My Account
+          </Link>
+        </DropdownMenuItem>
+
+        <DropdownMenuSeparator />
+
         <DropdownMenuItem
           onClick={() => signOut()}
           className='cursor-pointer'

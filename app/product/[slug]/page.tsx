@@ -51,8 +51,8 @@ const ProductPage = async ({
 
   const breadcrumbs = [
     {
-      label: 'Products',
-      href: '/'
+      label: 'Search',
+      href: '/search'
     },
     {
       label: product.category?.name,

@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
+import { auth } from '@/lib/auth';
 import OrderItem from './order-item';
 import OrderSummary from './order-summary';
+import Breadcrumbs from '@/components/shared/breadcrumbs';
 
 interface OrderPageProps {
   params: Promise<{
@@ -29,8 +31,26 @@ const OrderPage = async ({ params }: OrderPageProps) => {
     notFound();
   };
 
+  const session = await auth();
+  const isOwner = session?.user?.id === order.userId;
+
   return (
     <main className='container mx-auto p-4'>
+      {isOwner && (
+        <Breadcrumbs
+          items={[
+            {
+              label: 'My Account',
+              href: '/account',
+            },
+            {
+              label: 'Order',
+              href: `/order/${order.id}`,
+            },
+          ]}
+        />
+      )}
+
       <ul>
         {order.items.map((item) => (
           <OrderItem key={item.id} orderItem={item} />
