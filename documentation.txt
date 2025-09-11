@@ -1032,3 +1032,10 @@ Section 16: Production build, metadata and SEO, error handling
 -open link: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
 -in folder app create robots.ts file
 -in robots.ts file create and export function robots()
+
+153. Error handling and error boundaries
+-open link: https://nextjs.org/docs/app/getting-started/error-handling
+-in folder product/[slug] create component error.tsx
+-in component error.tsx create and export function Error()
+-open Docker and stop project container
+-open route: http://localhost:3000/product/[slug]
