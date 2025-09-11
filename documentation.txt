@@ -961,9 +961,16 @@ Section 15: Expanding authentication: Sign-up, session management and access con
 -in schema.prisma file add to model Order fields userId and user
 -add to model User field orders
 -type command: npx prisma migrate dev --name associate_order_with_users
+-type command: npx prisma studio
 -in orders.ts file import function auth from lib/auth.ts file
 -in async function processCheckout() invoke function await auth()
 -the value of function await auth() store in a variable const session
 -create variable const userId
 -in object data add key value userId
 -in stripe.ts file, in object metadata add variable userId
+
+145. Testing making orders
+-open route: http://localhost:3000/cart and click Proceed to Checkout button
+-open route:https://checkout.stripe.com/c/pay/[paymentId], add your info and click Pay button
+-open route: http://localhost:3000/order/[orderId]
+-open Prisma studio and check model Orders
