@@ -1014,3 +1014,10 @@ Section 16: Production build, metadata and SEO, error handling
 -in component app/layout.tsx import object metadata
 -in component search/[slug]/page.tsx create and export async function generateMetadata
 -open route: http://localhost:3000
+
+150. Adding JSON-LD (Structured data)
+-open link: https://nextjs.org/docs/app/guides/json-ld
+-open link: https://json-ld.org
+-in component product/[slug]/page.tsx create variable const jsonLd 
+-in main element create script element
+-open route: http://localhost:3000/product/[slug]
