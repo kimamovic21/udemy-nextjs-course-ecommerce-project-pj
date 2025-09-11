@@ -1021,3 +1021,9 @@ Section 16: Production build, metadata and SEO, error handling
 -in component product/[slug]/page.tsx create variable const jsonLd 
 -in main element create script element
 -open route: http://localhost:3000/product/[slug]
+
+151. Generating sitemap (dynamically)
+-open link: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
+-in folder app create sitemap.ts file
+-in sitemap.ts file create and export async function sitemap()
+-open route: http://localhost:3000
