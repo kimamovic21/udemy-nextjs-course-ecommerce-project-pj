@@ -993,3 +993,5 @@ Allow resuming checkout with saved sessionId
 -in folder api create folders [orderId], continue and route.ts file
 -in route.ts file create and export async function GET() for fetching order by session id
 -in component account/page.tsx, in jsx add conditional rendering for status pending_payment
+
+147. Improving order & my orders page
