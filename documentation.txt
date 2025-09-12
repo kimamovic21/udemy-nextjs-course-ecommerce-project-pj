@@ -1124,3 +1124,6 @@ Section 18: Optimizing: Dynamic pages and cache strategy
 
 168. Consistent caching and an exercise
 -in cache-keys.ts file import function createProductsCacheKey()
+
+169. Cache invalidation strategy
+-open link: https://nextjs.org/docs/app/guides/caching
