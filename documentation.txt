@@ -1088,3 +1088,10 @@ Section 17: Optimizing: SSG/ISR and client fetching
 162. ISR & SWR: Putting it all together
 -type command: npm run build
 -type command: npm start
+
+
+
+Section 18: Optimizing: Dynamic pages and cache strategy
+
+
+163. How to: Optimizing dynamic pages
