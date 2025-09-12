@@ -1056,3 +1056,7 @@ Section 17: Optimizing: SSG/ISR and client fetching
 -in component product/[slug]/page.tsx import object prisma from prisma.ts file
 -create and export variable const revalidate
 -create and export async function generateStaticParams()
+
+157. Solution: Partial pre rendering (PPR) or client side fetching (SWR) ?
+-open link: https://nextjs.org/docs/app/getting-started/partial-prerendering
+-open link: https://swr.vercel.app/
