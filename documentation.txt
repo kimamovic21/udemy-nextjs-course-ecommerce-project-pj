@@ -1051,4 +1051,8 @@ Section 17: Optimizing: SSG/ISR and client fetching
 
 155. Understanding incremental static regeneration (ISR)
 -open link: https://nextjs.org/docs/pages/guides/incremental-static-regeneration
--
+
+156. Practical: ISR on product page
+-in component product/[slug]/page.tsx import object prisma from prisma.ts file
+-create and export variable const revalidate
+-create and export async function generateStaticParams()
