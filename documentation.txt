@@ -1077,3 +1077,10 @@ Section 17: Optimizing: SSG/ISR and client fetching
 -import function useCart() from use-cart.ts file
 -invoke function useCart()
 -open route: http://localhost:3000
+
+161. Update cart mutations
+-in component use-cart.tsx import function mutate from package swr
+-create function revalidateCart()
+-in return object add function revalidateCart
+-in components add-to-cart-button.tsx and cart-entry.tsx import and invoke function useCart()
+-open route: http://localhost:3000/product/[slug] and add product to cart
