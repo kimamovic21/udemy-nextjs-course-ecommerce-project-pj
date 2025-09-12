@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { prisma } from '@/lib/prisma';
+import { getProductsCountCached } from '@/lib/actions';
 import {
   Pagination,
   PaginationContent,
@@ -20,7 +20,7 @@ const HomePage = async (props: { searchParams: SearchParams }) => {
   const searchParams = await props.searchParams;
   const currentPage = Number(searchParams.page) || 1;
 
-  const totalProducts = await prisma.product.count();
+  const totalProducts = await getProductsCountCached();
   const totalPages = Math.ceil(totalProducts / productsPerPage);
 
   return (

@@ -242,3 +242,9 @@ export async function getProductsCached({
     }
   )();
 };
+
+export async function getProductsCountCached() {
+  return unstable_cache(() => prisma.product.count(), ['products-count'], {
+    tags: ['products'],
+  })();
+};

@@ -1107,3 +1107,8 @@ Section 18: Optimizing: Dynamic pages and cache strategy
 -in component ProductListServerWrapper.tsx import function getProductsCached from lib/actions.ts file
 -type command: npm run build
 -type command: npm start
+
+166. Optimize: Add product count cache
+-in lib/actions.ts file create and export async function export async function getProductsCountCached()
+-in component app/page.tsx import function getProductsCountCached
+-update variable const const totalProducts
