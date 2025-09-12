@@ -1,5 +1,4 @@
 import { getProducts } from '@/lib/actions';
-import { sleep } from '@/lib/utils';
 import ProductList from './product-list';
 
 interface ProductListServerWrapperProps {
@@ -17,8 +16,6 @@ const ProductListServerWrapper = async ({
   currentPage,
   productsPerPage,
 }: ProductListServerWrapperProps) => {
-  await sleep(500);
-
   const products = await getProducts({
     query,
     slug,

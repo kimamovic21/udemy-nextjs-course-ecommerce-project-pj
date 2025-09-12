@@ -3,13 +3,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-const Error = ({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) => {
+const Error = ({ reset }: { reset: () => void }) => {
   return (
     <main className='container mx-auto flex flex-col items-center justify-center h-screen gap-4'>
       <h1 className='text-2xl font-bold'>

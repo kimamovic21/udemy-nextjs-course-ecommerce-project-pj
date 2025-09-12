@@ -1084,3 +1084,7 @@ Section 17: Optimizing: SSG/ISR and client fetching
 -in return object add function revalidateCart
 -in components add-to-cart-button.tsx and cart-entry.tsx import and invoke function useCart()
 -open route: http://localhost:3000/product/[slug] and add product to cart
+
+162. ISR & SWR: Putting it all together
+-type command: npm run build
+-type command: npm start
