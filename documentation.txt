@@ -1070,3 +1070,10 @@ Section 17: Optimizing: SSG/ISR and client fetching
 159. SWR and useCart custom hook
 -in folder lib create use-cart.ts file
 -in use-cart.ts file create and export function useCart()
+
+160. Update the cart indicator
+-in component navbar.tsx remove component Suspense
+-in component cart-indicator.tsx add directive 'use client'
+-import function useCart() from use-cart.ts file
+-invoke function useCart()
+-open route: http://localhost:3000
