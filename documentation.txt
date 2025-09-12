@@ -1099,3 +1099,11 @@ Section 18: Optimizing: Dynamic pages and cache strategy
 164. Smart caching keys & tags
 -in folder lib create cache-keys.ts file
 -in cache-keys.ts file create and export function createProductsCacheKey()
+
+165. Optimize: getProducts function
+-in folder lib create cache.ts file
+-in cache.ts file create and export function cached()
+-in lib/actions.ts create and export async function getProductsCached()
+-in component ProductListServerWrapper.tsx import function getProductsCached from lib/actions.ts file
+-type command: npm run build
+-type command: npm start

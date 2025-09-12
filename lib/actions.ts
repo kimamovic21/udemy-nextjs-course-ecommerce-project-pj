@@ -5,6 +5,10 @@ import { cookies } from 'next/headers';
 import { prisma } from '@/lib/prisma';
 import type { Prisma } from '@/app/generated/prisma';
 import type { CartWithProducts, ShoppingCart } from './types';
+import {
+  createProductsCacheKey,
+  createProductsTags
+} from './cache-keys';
 
 interface GetProductsParams {
   query?: string;
@@ -12,6 +16,8 @@ interface GetProductsParams {
   sort?: string;
   currentPage?: number;
   productsPerPage?: number;
+  page?: number;
+  pageSize?: number;
 };
 
 export async function getProducts({
@@ -206,4 +212,33 @@ export async function setProductQuantity(
     console.error('Error updating cart item quantity:', error);
     throw new Error('Failed to update cart item quantity');
   };
+};
+
+export async function getProductsCached({
+  query,
+  slug,
+  sort,
+  page = 1,
+  pageSize = 3,
+}: GetProductsParams) {
+  const cacheKey = createProductsCacheKey({
+    search: query,
+    categorySlug: slug,
+    sort,
+    page,
+    limit: pageSize,
+  });
+  const cacheTags = createProductsTags({ search: query, categorySlug: slug });
+
+  return unstable_cache(
+    () => {
+      console.log('getProductsCached', { query, slug, sort, page, pageSize });
+      return getProducts({ query, slug, sort, page, pageSize });
+    },
+    [cacheKey],
+    {
+      tags: cacheTags,
+      revalidate: 3600,
+    }
+  )();
 };
