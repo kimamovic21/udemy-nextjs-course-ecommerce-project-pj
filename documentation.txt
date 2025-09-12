@@ -1043,3 +1043,12 @@ Section 16: Production build, metadata and SEO, error handling
 154. Cleanup: Removing logs and making dynamic page fast
 -in auth.ts file, in function NextAuth() add field trustHost
 -in prisma.ts file add log for error
+-remove sleep() function from components
+
+
+
+Section 17: Optimizing: SSG/ISR and client fetching
+
+155. Understanding incremental static regeneration (ISR)
+-open link: https://nextjs.org/docs/pages/guides/incremental-static-regeneration
+-
