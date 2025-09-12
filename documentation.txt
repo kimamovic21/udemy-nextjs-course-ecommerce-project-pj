@@ -1060,3 +1060,9 @@ Section 17: Optimizing: SSG/ISR and client fetching
 157. Solution: Partial pre rendering (PPR) or client side fetching (SWR) ?
 -open link: https://nextjs.org/docs/app/getting-started/partial-prerendering
 -open link: https://swr.vercel.app/
+
+158. Creating the cart API route
+-open link: https://www.npmjs.com/package/swr
+-type command: npm i swr
+-in folder app/api create folder cart and route.ts file
+-in route.ts file create and export async function GET()
