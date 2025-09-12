@@ -1095,3 +1095,7 @@ Section 18: Optimizing: Dynamic pages and cache strategy
 
 
 163. How to: Optimizing dynamic pages
+
+164. Smart caching keys & tags
+-in folder lib create cache-keys.ts file
+-in cache-keys.ts file create and export function createProductsCacheKey()
