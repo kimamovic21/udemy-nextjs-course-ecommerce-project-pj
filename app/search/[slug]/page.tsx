@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
-import { prisma } from '@/lib/prisma';
+import { getCategoryBySlugCached } from '@/lib/actions';
 import ProductsSkeleton from '@/app/products-skeleton';
 import Breadcrumbs from '@/components/shared/breadcrumbs';
 import ProductListServerWrapper from '@/components/shared/product-list-server-wrapper';
@@ -16,16 +16,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
-  const category = await prisma.category.findUnique({
-    where: {
-      slug,
-    },
-    select: {
-      name: true,
-      slug: true,
-    },
-  });
+  const category = await getCategoryBySlugCached(slug);
 
   if (!category) {
     return {};
@@ -46,15 +37,7 @@ const CategoryPage = async ({
   const { slug } = await params;
   const { sort } = await searchParams;
 
-  const category = await prisma.category.findUnique({
-    where: {
-      slug,
-    },
-    select: {
-      name: true,
-      slug: true,
-    },
-  });
+  const category = await getCategoryBySlugCached(slug);
 
   if (!category) {
     notFound();

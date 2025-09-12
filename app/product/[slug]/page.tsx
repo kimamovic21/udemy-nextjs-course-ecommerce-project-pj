@@ -59,8 +59,6 @@ const ProductPage = async ({
 
   const product = await getProductBySlug(slug);
 
-  console.log(`Fetching product ${slug}`);
-
   if (!product) {
     notFound();
   };

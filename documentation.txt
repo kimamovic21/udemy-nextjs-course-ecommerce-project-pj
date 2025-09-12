@@ -1112,3 +1112,12 @@ Section 18: Optimizing: Dynamic pages and cache strategy
 -in lib/actions.ts file create and export async function export async function getProductsCountCached()
 -in component app/page.tsx import function getProductsCountCached
 -update variable const const totalProducts
+-type command: npm run build
+-type command: npm start
+
+167. Optimize: Category cache
+-in lib/actions.ts file create and export async functions getCategoryBySlug() and getCategoryBySlugCached()
+-in component app/search/[slug]/page.tsx import function getCategoryBySlugCached from lib/actions.ts file
+-update variables const category
+-type command: npm run build
+-type command: npm start
