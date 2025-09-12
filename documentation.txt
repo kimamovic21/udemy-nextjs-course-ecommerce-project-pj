@@ -1066,3 +1066,7 @@ Section 17: Optimizing: SSG/ISR and client fetching
 -type command: npm i swr
 -in folder app/api create folder cart and route.ts file
 -in route.ts file create and export async function GET()
+
+159. SWR and useCart custom hook
+-in folder lib create use-cart.ts file
+-in use-cart.ts file create and export function useCart()
