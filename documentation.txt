@@ -1134,3 +1134,8 @@ Section 19: Live deployment on Vercel
 
 
 170. The deployment plan
+
+171. Prisma migrations during build
+-in package.json file update command build
+-type command: npm run build
+-type command: npm start
