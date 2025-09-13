@@ -1127,3 +1127,10 @@ Section 18: Optimizing: Dynamic pages and cache strategy
 
 169. Cache invalidation strategy
 -open link: https://nextjs.org/docs/app/guides/caching
+
+
+
+Section 19: Live deployment on Vercel
+
+
+170. The deployment plan

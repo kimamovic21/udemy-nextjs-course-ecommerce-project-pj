@@ -46,7 +46,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const parsedCredentials = LoginSchema.safeParse(credentials);
 
         if (!parsedCredentials.success) {
-          console.log('Invalid credentials format');
+          console.error('Invalid credentials format');
           return null;
         };
 
@@ -58,7 +58,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           });
 
           if (!user) {
-            console.log('No user found with this email');
+            console.error('No user found with this email');
             return null;
           };
 
@@ -68,7 +68,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           );
 
           if (!passwordsMatch) {
-            console.log('Password does not match');
+            console.error('Password does not match');
             return null;
           };
 

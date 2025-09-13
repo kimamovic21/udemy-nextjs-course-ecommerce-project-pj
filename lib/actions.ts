@@ -232,7 +232,6 @@ export async function getProductsCached({
 
   return unstable_cache(
     () => {
-      console.log('getProductsCached', { query, slug, sort, page, pageSize });
       return getProducts({ query, slug, sort, page, pageSize });
     },
     [cacheKey],

@@ -8,8 +8,8 @@ export async function GET() {
     return NextResponse.json({
       itemCount: cart?.size || 0,
     });
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    console.error(e);
 
     return NextResponse.json({ itemCount: 0 }, { status: 500 });
   };
