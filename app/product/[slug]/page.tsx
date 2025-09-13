@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getProductBySlug } from '@/lib/actions';
 import { formatPrice } from '@/lib/utils';
@@ -9,18 +10,17 @@ import Image from 'next/image';
 import Breadcrumbs from '@/components/shared/breadcrumbs';
 import AddToCartButton from '@/components/shared/add-to-cart-button';
 
-export const generateMetadata = async ({
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) => {
+}) {
   const { slug } = await params;
-
   const product = await getProductBySlug(slug);
 
   if (!product) {
     return {};
-  };
+  }
 
   return {
     title: product.name,
@@ -37,9 +37,9 @@ export const generateMetadata = async ({
   };
 }
 
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 3600;
 
-export const generateStaticParams = async () => {
+export async function generateStaticParams() {
   const products = await prisma.product.findMany({
     select: {
       slug: true,
@@ -48,7 +48,7 @@ export const generateStaticParams = async () => {
   return products.map((product) => ({
     slug: product.slug,
   }));
-};
+}
 
 const ProductPage = async ({
   params,
@@ -56,12 +56,11 @@ const ProductPage = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
-
   const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
-  };
+  }
 
   const jsonLd = {
     '@context': 'https://schema.org/',
@@ -111,40 +110,28 @@ const ProductPage = async ({
               />
             )}
           </div>
-
           <div>
-            <h1 className='text-3xl font-bold mb-2'>
-              {product.name}
-            </h1>
+            <h1 className='text-3xl font-bold mb-2'>{product.name}</h1>
 
             <div className='flex items-center gap-2 mb-4'>
               <span className='font-semibold text-lg'>
                 {formatPrice(product.price)}
               </span>
 
-              <Badge variant='outline'>
-                {product.category?.name}
-              </Badge>
+              <Badge variant='outline'>{product.category?.name}</Badge>
             </div>
 
             <Separator className='my-4' />
 
             <div className='space-y-2'>
-              <h2 className='font-medium'>
-                Description
-              </h2>
-              <p>
-                {product.description}
-              </p>
+              <h2 className='font-medium'>Description</h2>
+              <p>{product.description}</p>
             </div>
 
             <Separator className='my-4' />
 
             <div className='space-y-2'>
-              <h2 className='font-medium'>
-                Availability
-              </h2>
-
+              <h2 className='font-medium'>Availability</h2>
               <div className='flex items-center gap-2'>
                 {product.inventory > 0 ? (
                   <Badge variant='outline' className='text-green-600'>

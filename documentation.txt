@@ -1153,3 +1153,15 @@ Section 19: Live deployment on Vercel
 -type command: git status
 -type command: git commit -m 'Git & GitHub crash course'
 -type command: git push -u origin main
+
+174. Vercel: Deployment & Postgres
+-open link: https://vercel.com
+-create new project on Vercel
+-add env variables in your project except env variable DATABASE_URL
+-first deployment should failed
+-click button Deploy
+-open your project and select Storage option
+-click button Create database
+-select Prisma postgres database
+-env variable DATABASE_URL should automatically be added to your project
+-choose Deployment setting and click Redeploy button

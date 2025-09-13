@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 import { JWT } from 'next-auth/jwt';
 import { prisma } from '@/lib/prisma';
 import { LoginSchema } from './schemas';
