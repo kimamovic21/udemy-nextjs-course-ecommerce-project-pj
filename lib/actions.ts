@@ -98,7 +98,7 @@ async function findCartFromCookie(): Promise<CartWithProducts | null> {
       });
     },
     [`cart-${cartId}`],
-    { tags: [`cart-${cartId}`] }
+    { tags: [`cart-${cartId}`], revalidate: 3600 }
   )(cartId);
 };
 
@@ -185,8 +185,6 @@ export async function setProductQuantity(
     throw new Error('Cart not found');
   };
 
-  // TODO: Make sure the product inventory is not exceeded
-
   try {
     if (quantity === 0) {
       await prisma.cartItem.deleteMany({
@@ -245,6 +243,7 @@ export async function getProductsCached({
 export async function getProductsCountCached() {
   return unstable_cache(() => prisma.product.count(), ['products-count'], {
     tags: ['products'],
+    revalidate: 3600,
   })();
 };
 

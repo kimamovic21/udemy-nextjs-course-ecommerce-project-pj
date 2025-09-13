@@ -1,19 +1,28 @@
 import { Suspense } from 'react';
+import { unstable_cache } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import CategorySidebar from '@/components/shared/category-sidebar';
 import SortingControls from '@/components/shared/sorting-controls';
 
 const CategorySidebarServerWrapper = async () => {
-  const categories = await prisma.category.findMany({
-    select: {
-      name: true,
-      slug: true,
+  const categories = await unstable_cache(
+    () => {
+      return prisma.category.findMany({
+        select: {
+          name: true,
+          slug: true,
+        },
+        orderBy: {
+          name: 'asc',
+        },
+      });
     },
-    orderBy: {
-      name: 'asc',
-    },
-  });
-
+    ['categories'],
+    {
+      tags: ['categories'],
+      revalidate: 3600,
+    }
+  )();
   return (
     <CategorySidebar categories={categories} />
   );

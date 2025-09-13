@@ -1139,3 +1139,7 @@ Section 19: Live deployment on Vercel
 -in package.json file update command build
 -type command: npm run build
 -type command: npm start
+
+172. Consistent caching & generic caching advice
+-in component search/layout.tsx import and invoke function unstable_cache()
+-in actions.ts file update variables tags and revalidate
