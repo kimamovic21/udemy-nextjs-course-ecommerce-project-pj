@@ -37,7 +37,7 @@ export const generateMetadata = async ({
   };
 }
 
-export const revalidate = 3600;
+export const revalidate = 60 * 60 * 24;
 
 export const generateStaticParams = async () => {
   const products = await prisma.product.findMany({

@@ -1143,3 +1143,13 @@ Section 19: Live deployment on Vercel
 172. Consistent caching & generic caching advice
 -in component search/layout.tsx import and invoke function unstable_cache()
 -in actions.ts file update variables tags and revalidate
+
+173. Git & GitHub crash course
+-open link: https://github.com/git-guides
+-type command: git version
+-type command: git init
+-type command: git status
+-type command: git add .
+-type command: git status
+-type command: git commit -m 'Git & GitHub crash course'
+-type command: git push -u origin main
